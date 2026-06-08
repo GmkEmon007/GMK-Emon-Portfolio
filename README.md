@@ -97,8 +97,8 @@ The website combines modern design, smooth animations, and performance-focused d
 
 Want to clone the repository:
 
-* git clone https://github.com/yourusername/gmkemon-portfolio-v2.git
-
+* git clone https:[https://gmkemon007.github.io/GMK-Emon-Portfolio/
+](https://gmkemon007.github.io/GMK-Emon-Portfolio/)
 * Install dependencies:
 
 * npm install

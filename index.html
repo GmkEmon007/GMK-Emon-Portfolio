@@ -7,16 +7,15 @@
 <meta name="description" content="Portfolio of Golam Morshed Kibria Emon — CMS & Frontend Developer evolving into AI/ML Engineering.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- CURSOR -->
 <div id="cursor"></div>
 <div id="cursor-trail"></div>
 <div id="mouse-glow"></div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">GMK Emon</div>
   <ul class="nav-links">
@@ -29,7 +28,6 @@
   <a href="#contact" class="nav-cta">Hire Me</a>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-bg">
     <div class="grid-lines"></div>
@@ -42,8 +40,7 @@
 
   <div class="hero-inner">
 
-    <!-- LEFT -->
-    <div class="hero-left">
+        <div class="hero-left">
       <div class="hero-eyebrow fade-up d1">
         <div class="hero-eyebrow-dot"></div>
         <span>Available for Freelance &amp; Collaboration</span>
@@ -61,15 +58,14 @@
         emerging AI/ML skills to build solutions that matter.
       </p>
 
-      <!-- inline stats strip -->
-      <div class="hero-stats fade-up d3">
+            <div class="hero-stats fade-up d3">
         <div class="hstat">
           <div class="hstat-val">9+</div>
           <div class="hstat-label">CMS Sites</div>
         </div>
         <div class="hstat-divider"></div>
         <div class="hstat">
-          <div class="hstat-val">4+</div>
+          <div class="hstat-val">3+</div>
           <div class="hstat-label">Frontend</div>
         </div>
         <div class="hstat-divider"></div>
@@ -90,11 +86,9 @@
       </div>
     </div>
 
-    <!-- RIGHT — real photo -->
-    <div class="hero-right fade-up d3">
+        <div class="hero-right fade-up d3">
       <div class="photo-wrapper">
-        <!-- corner brackets -->
-        <div class="photo-corner tl"></div>
+                <div class="photo-corner tl"></div>
         <div class="photo-corner tr"></div>
         <div class="photo-corner bl"></div>
         <div class="photo-corner br"></div>
@@ -118,7 +112,82 @@
   </div>
 </section>
 
-<!-- ABOUT -->
+<style>
+  .marquee-section {
+    background-color: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem 0;
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+  }
+  
+  .marquee-inner {
+    display: flex;
+    width: max-content;
+    animation: scroll-marquee 60s linear infinite;
+  }
+  
+  .your-marquee-container-class {
+  background-color: transparent !important;
+  /*Forces the change even if another style tries to set it to black*/
+  }
+
+  .marquee-inner:hover {
+    animation-play-state: paused;
+  }
+
+  .marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+
+  .marquee-content span {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .marquee-star {
+    color: #00ff66; /* Vibrant green from your design */
+    font-size: 0.9rem;
+  }
+
+  @keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
+
+<section id="marquee" class="marquee-section">
+  <div class="marquee-inner">
+    <div class="marquee-content">
+      <span>Speed wins. Always</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+      <span>Pixels don't pay bills. Conversions do</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+      <span>If it doesn't sell, it doesn't ship</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+      <span>Built for ROI, not for awards</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+      <span>WordPress that actually performs</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+      <span>Design is a sales tool, not decoration</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+    </div>
+    <div class="marquee-content" aria-hidden="true">
+      <span>Speed wins. Always</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+      <span>Pixels don't pay bills. Conversions do</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+      <span>If it doesn't sell, it doesn't ship</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+      <span>Built for ROI, not for awards</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+      <span>WordPress that actually performs</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+      <span>Design is a sales tool, not decoration</span><i class="fa-solid fa-star-of-life marquee-star"></i>
+    </div>
+  </div>
+</section>
+
 <section id="about">
   <div class="section-inner">
     <div class="about-grid">
@@ -132,22 +201,22 @@
       <div>
         <div class="stat-cards">
           <div class="stat-card">
-            <div class="stat-icon">🌐</div>
+            <div class="stat-icon"><i class="fa-solid fa-globe"></i></div>
             <div class="stat-label">CMS Development</div>
-            <div class="stat-value" data-count="40">0+</div>
+            <div class="stat-value" data-count="9">0+</div>
           </div>
           <div class="stat-card">
-            <div class="stat-icon">💻</div>
+            <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
             <div class="stat-label">Frontend Development</div>
-            <div class="stat-value" data-count="25">0+</div>
+            <div class="stat-value" data-count="3">0+</div>
           </div>
           <div class="stat-card">
-            <div class="stat-icon">🎨</div>
+            <div class="stat-icon"><i class="fa-solid fa-palette"></i></div>
             <div class="stat-label">Graphic Design</div>
-            <div class="stat-value" data-count="100">0+</div>
+            <div class="stat-value" data-count="300">0+</div>
           </div>
           <div class="stat-card">
-            <div class="stat-icon">🤖</div>
+            <div class="stat-icon"><i class="fa-solid fa-robot"></i></div>
             <div class="stat-label">AI/ML Learning</div>
             <div class="stat-value" style="font-size:1rem;padding-top:0.25rem">In Progress</div>
           </div>
@@ -157,7 +226,6 @@
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <div class="section-inner">
     <div class="section-label">Education</div>
@@ -188,14 +256,13 @@
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="section-inner">
     <div class="section-label">Services</div>
     <h2 class="section-title">What I Offer</h2>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">🌐</div>
+        <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
         <div class="service-name">CMS Development</div>
         <div class="service-tags">
           <span class="service-tag">WordPress</span><span class="service-tag">Elementor</span>
@@ -204,7 +271,7 @@
         </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">💻</div>
+        <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
         <div class="service-name">Frontend Development</div>
         <div class="service-tags">
           <span class="service-tag">HTML</span><span class="service-tag">CSS</span>
@@ -213,7 +280,7 @@
         </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">🎨</div>
+        <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
         <div class="service-name">Graphic Design</div>
         <div class="service-tags">
           <span class="service-tag">Social Media Design</span><span class="service-tag">Branding</span>
@@ -224,14 +291,13 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
     <div class="section-label">Skills</div>
     <h2 class="section-title">Technical Arsenal</h2>
     <div class="skills-groups">
       <div class="skill-group">
-        <div class="skill-group-title">&#9881;&#65039; Development</div>
+        <div class="skill-group-title"><i class="fa-solid fa-gear"></i> Development</div>
         <div class="skill-pills">
           <span class="skill-pill">WordPress</span><span class="skill-pill">Elementor</span>
           <span class="skill-pill">HTML</span><span class="skill-pill">CSS</span>
@@ -240,7 +306,7 @@
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">🤖 AI &amp; Machine Learning</div>
+        <div class="skill-group-title"><i class="fa-solid fa-robot"></i> AI &amp; Machine Learning</div>
         <div class="skill-pills">
           <span class="skill-pill ai">ML Fundamentals</span><span class="skill-pill ai">Scikit-Learn</span>
           <span class="skill-pill ai">Data Analysis</span><span class="skill-pill ai">Data Preprocessing</span>
@@ -249,14 +315,14 @@
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">🗄️ Data &amp; Database</div>
+        <div class="skill-group-title"><i class="fa-solid fa-database"></i> Data &amp; Database</div>
         <div class="skill-pills">
           <span class="skill-pill">SQL</span><span class="skill-pill">Database Design</span>
           <span class="skill-pill">Data Management</span><span class="skill-pill">CSV Processing</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">🎨 Design &amp; Future Tech</div>
+        <div class="skill-group-title"><i class="fa-solid fa-palette"></i> Design &amp; Future Tech</div>
         <div class="skill-pills">
           <span class="skill-pill">Canva</span><span class="skill-pill">Figma</span>
           <span class="skill-pill">Illustrator</span><span class="skill-pill ai">Machine Learning</span>
@@ -268,23 +334,22 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-inner">
     <div class="section-label">Projects</div>
     <h2 class="section-title">Featured Work</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <div class="project-thumb"><span class="project-thumb-icon">🧠</span></div>
+        <div class="project-thumb"><span class="project-thumb-icon"><i class="fa-solid fa-brain"></i></span></div>
         <div class="project-body">
           <div class="project-title">Student Performance Prediction System</div>
           <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Machine Learning</span><span class="project-tag">Scikit-Learn</span></div>
-          <div class="project-result">🎯 Result: 88% prediction accuracy</div>
+          <div class="project-result"><i class="fa-solid fa-bullseye"></i> Result: 88% prediction accuracy</div>
           <a href="#" class="project-link">View Project &rarr;</a>
         </div>
       </div>
       <div class="project-card">
-        <div class="project-thumb"><span class="project-thumb-icon">🚗</span></div>
+        <div class="project-thumb"><span class="project-thumb-icon"><i class="fa-solid fa-car"></i></span></div>
         <div class="project-body">
           <div class="project-title">Automated Car Parking System</div>
           <div class="project-tags"><span class="project-tag">Arduino</span><span class="project-tag">Sensors</span><span class="project-tag">Embedded Systems</span></div>
@@ -293,7 +358,7 @@
         </div>
       </div>
       <div class="project-card">
-        <div class="project-thumb"><span class="project-thumb-icon">🤖</span></div>
+        <div class="project-thumb"><span class="project-thumb-icon"><i class="fa-solid fa-robot"></i></span></div>
         <div class="project-body">
           <div class="project-title">AIBD STEM Education Projects</div>
           <div class="project-tags"><span class="project-tag">Robotics</span><span class="project-tag">Education</span><span class="project-tag">STEM</span></div>
@@ -302,7 +367,7 @@
         </div>
       </div>
       <div class="project-card">
-        <div class="project-thumb"><span class="project-thumb-icon">🌐</span></div>
+        <div class="project-thumb"><span class="project-thumb-icon"><i class="fa-solid fa-globe"></i></span></div>
         <div class="project-body">
           <div class="project-title">Professional CMS Websites</div>
           <div class="project-tags"><span class="project-tag">WordPress</span><span class="project-tag">Elementor</span><span class="project-tag">SEO</span></div>
@@ -314,7 +379,6 @@
   </div>
 </section>
 
-<!-- JOURNEY -->
 <section id="journey">
   <div class="section-inner">
     <div class="section-label">Journey</div>
@@ -338,35 +402,33 @@
       </div>
       <div class="journey-item">
         <div class="journey-year">Future</div>
-        <div class="journey-content"><div class="journey-event journey-future">AI/ML Engineering &amp; Research 🚀</div></div>
+        <div class="journey-content"><div class="journey-event journey-future">AI/ML Engineering &amp; Research </div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMMUNITY -->
 <section id="community">
   <div class="section-inner">
     <div class="section-label">Community Impact</div>
     <h2 class="section-title">Beyond Development</h2>
     <p class="section-desc">I actively contribute to STEM education, robotics, and technology awareness initiatives through Artificial Intelligence Bangladesh (AIBD). My mission is to help students learn, create, and innovate through technology.</p>
     <div class="community-grid">
-      <div class="community-card"><div class="community-icon">📚</div><div class="community-label">STEM Education</div></div>
-      <div class="community-card"><div class="community-icon">🤖</div><div class="community-label">Robotics</div></div>
-      <div class="community-card"><div class="community-icon">🧬</div><div class="community-label">AI Awareness</div></div>
-      <div class="community-card"><div class="community-icon">👨‍🏫</div><div class="community-label">Student Mentorship</div></div>
+      <div class="community-card"><div class="community-icon"><i class="fa-solid fa-book"></i></div><div class="community-label">STEM Education</div></div>
+      <div class="community-card"><div class="community-icon"><i class="fa-solid fa-robot"></i></div><div class="community-label">Robotics</div></div>
+      <div class="community-card"><div class="community-icon"><i class="fa-solid fa-dna"></i></div><div class="community-label">AI Awareness</div></div>
+      <div class="community-card"><div class="community-icon"><i class="fa-solid fa-chalkboard-user"></i></div><div class="community-label">Student Mentorship</div></div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="section-inner">
     <div class="section-label">Testimonials</div>
     <h2 class="section-title">What Clients Say</h2>
     <div class="testi-grid">
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
         <p class="testi-quote">"Emon delivered an exceptional WordPress site that exceeded expectations. His attention to detail and SEO knowledge truly set him apart from other developers."</p>
         <div class="testi-author">
           <div class="testi-avatar">RA</div>
@@ -374,7 +436,7 @@
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
         <p class="testi-quote">"The student performance system Emon built was incredibly accurate. His ML knowledge combined with clean Python code produced outstanding results."</p>
         <div class="testi-author">
           <div class="testi-avatar">SK</div>
@@ -382,7 +444,7 @@
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
         <p class="testi-quote">"Emon's graphic design work for our brand was creative and professional. He understood our vision perfectly and delivered ahead of schedule."</p>
         <div class="testi-author">
           <div class="testi-avatar">MI</div>
@@ -393,14 +455,13 @@
   </div>
 </section>
 
-<!-- BLOG -->
 <section id="blog">
   <div class="section-inner">
     <div class="section-label">Blog</div>
     <h2 class="section-title">Latest Articles</h2>
     <div class="blog-grid">
       <div class="blog-card">
-        <div class="blog-thumb">💡</div>
+        <div class="blog-thumb"><i class="fa-solid fa-lightbulb"></i></div>
         <div class="blog-body">
           <div class="blog-cat">Artificial Intelligence</div>
           <div class="blog-title">How I Built a Student Performance Predictor with 88% Accuracy</div>
@@ -408,7 +469,7 @@
         </div>
       </div>
       <div class="blog-card">
-        <div class="blog-thumb">🌐</div>
+        <div class="blog-thumb"><i class="fa-solid fa-globe"></i></div>
         <div class="blog-body">
           <div class="blog-cat">Web Development</div>
           <div class="blog-title">WordPress vs Headless CMS: Choosing the Right Stack in 2026</div>
@@ -416,7 +477,7 @@
         </div>
       </div>
       <div class="blog-card">
-        <div class="blog-thumb">🤖</div>
+        <div class="blog-thumb"><i class="fa-solid fa-robot"></i></div>
         <div class="blog-body">
           <div class="blog-cat">Robotics</div>
           <div class="blog-title">STEM Education Through Robotics: My Experience with AIBD</div>
@@ -427,7 +488,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
     <div class="contact-grid">
@@ -436,8 +496,8 @@
         <h2>Let's Build Something Meaningful</h2>
         <p>Whether you're looking for a professional website, a digital solution, or a technology partner for your next project, I'd love to connect.</p>
         <div style="margin-bottom:1.5rem">
-          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;color:var(--gray);font-size:0.9rem"><span style="color:var(--g1)">📧</span> gmkemon@gmail.com</div>
-          <div style="display:flex;align-items:center;gap:0.75rem;color:var(--gray);font-size:0.9rem"><span style="color:var(--g1)">📍</span> Bangladesh</div>
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;color:var(--gray);font-size:0.9rem"><span style="color:var(--g1)"><i class="fa-solid fa-envelope"></i></span> gmkemon@gmail.com</div>
+          <div style="display:flex;align-items:center;gap:0.75rem;color:var(--gray);font-size:0.9rem"><span style="color:var(--g1)"><i class="fa-solid fa-location-dot"></i></span> Bangladesh</div>
         </div>
         <div class="social-links">
           <a href="#" class="social-link" title="Facebook">f</a>
@@ -459,7 +519,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-name">GMK Emon</div>
   <div class="footer-tagline">CMS &amp; Frontend Developer | Future AI/ML Engineer</div>

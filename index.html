@@ -155,7 +155,7 @@
               <span style="color: var(--muted-foreground); background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); padding: 3px 8px; border-radius: 4px;">AI Solutions</span>
             </div>
             <p class="hero-subtitle fade-up d3">
-              Custom WordPress development, Next.js web applications, and intelligent digital systems &mdash; engineered to load under 2 seconds, communicate authority, and convert visitors into paying clients.
+              Full-stack engineer crafting high-velocity web experiences, robust product systems, and intelligent digital workflows designed to convert.
             </p>
             <div class="hero-actions fade-up d4">
               <a href="#contact" class="btn-primary">Let's Build Yours <i class="fa-solid fa-arrow-right"></i></a>
@@ -187,66 +187,26 @@
         </div>
       </section>
 
-      <!-- Interactive Terminal Ask Me Console -->
-      <section class="section-padding border-t" style="background: var(--bg0); padding: 4.5rem 0;" id="home-ask-me">
-        <div class="container" style="max-width: 900px;">
-          <!-- Section Header -->
-          <div class="section-header text-center" style="margin-bottom: 2.5rem;">
-            <span class="section-tag">// INTERACTIVE SHELL</span>
-            <h2 class="section-heading" style="font-size: 2.2rem;">Run a diagnostic on Emon's stack.</h2>
-            <p class="section-subtext">Click a query preset below or enter a custom prompt to ask the terminal console directly.</p>
-          </div>
-
-          <!-- Terminal Chat Console Widget -->
-          <div class="card-outline" style="position: relative; overflow: hidden; background: rgba(12, 14, 13, 0.4); border-color: rgba(34, 197, 94, 0.1); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; min-height: 480px; box-shadow: var(--shadow-card); text-align: left;">
-            <!-- Corner brackets decoration -->
-            <div class="corner-border tl" style="top: -1px; left: -1px;"></div>
-            <div class="corner-border tr" style="top: -1px; right: -1px;"></div>
-            <div class="corner-border bl" style="bottom: -1px; left: -1px;"></div>
-            <div class="corner-border br" style="bottom: -1px; right: -1px;"></div>
-
-            <!-- Terminal Window Topbar -->
-            <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); font-size: 12px; color: var(--muted-foreground); border-bottom: 1px dashed var(--border); padding-bottom: 0.75rem; margin-bottom: 1rem; user-select: none;">
-              <div style="display: flex; gap: 6px;">
-                <span style="width: 8px; height: 8px; background: #3f3f46; border-radius: 50%;"></span>
-                <span style="width: 8px; height: 8px; background: #3f3f46; border-radius: 50%;"></span>
-                <span style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px var(--primary);"></span>
-              </div>
-              <span style="letter-spacing: 0.05em; color: var(--muted-foreground);">~/ask-emon.sh</span>
-              <div style="display: flex; align-items: center; gap: 6px; color: var(--primary); font-weight: bold;">
-                <span class="shimmer-dot" style="width: 6px; height: 6px; border-radius: 50%; background: var(--primary); display: inline-block; box-shadow: 0 0 8px var(--primary); animation: pulse-glow 1.5s ease-in-out infinite;"></span>
-                ready
-              </div>
+      <!-- Metrics Strip -->
+      <section class="metrics-strip">
+        <div class="container">
+          <div class="metrics-container">
+            <div class="metric-item">
+              <div class="metric-number">&lt; 1.2s</div>
+              <div class="metric-label">Avg Load Speed</div>
             </div>
-
-            <!-- Terminal Text Output Stream -->
-            <div id="terminal-stream-log" style="flex: 1; overflow-y: auto; min-height: 280px; max-height: 320px; padding: 0.5rem; display: flex; flex-direction: column; scrollbar-width: thin; scroll-behavior: smooth;">
-              <!-- Initial Welcome Message from Emon-bot -->
-              <div style="align-self: flex-start; text-align: left; max-width: 85%; margin-bottom: 1.5rem;">
-                <div style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); margin-bottom: 4px;">› emon-bot</div>
-                <div style="color: var(--foreground); font-size: 14px; line-height: 1.6;">
-                  Connected to emon-shell terminal interface. I can answer questions about Golam Morshed Kibria Emon's technical stack, services, pricing structure, and active availability. 
-                  Select one of the quick scripts below or enter a custom prompt.
-                </div>
-              </div>
+            <div class="metric-item">
+              <div class="metric-number">25+</div>
+              <div class="metric-label">Shipped Builds</div>
             </div>
-
-            <!-- Preset Action Suggestion Buttons -->
-            <div style="display: flex; flex-wrap: wrap; gap: 0.65rem; padding: 1rem 0; border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border); margin-bottom: 1rem;">
-              <button type="button" class="terminal-query-btn" data-query="what is your stack?">what is your stack?</button>
-              <button type="button" class="terminal-query-btn" data-query="are you available for hire?">are you available for hire?</button>
-              <button type="button" class="terminal-query-btn" data-query="tell me about your process">tell me about your process</button>
-              <button type="button" class="terminal-query-btn" data-query="show developer rates">show developer rates</button>
+            <div class="metric-item">
+              <div class="metric-number">98+</div>
+              <div class="metric-label">PageSpeed Score</div>
             </div>
-
-            <!-- Input Shell Command Line -->
-            <form id="terminal-query-form" style="margin: 0; display: flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.12); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 10px;">
-              <span style="font-family: var(--font-mono); font-size: 14px; color: var(--primary); font-weight: bold; user-select: none;">›</span>
-              <input type="text" id="terminal-query-input" placeholder="ask anything about emon..." aria-label="Ask terminal a question" style="flex: 1; border: none; background: transparent; outline: none; font-family: var(--font-mono); font-size: 13.5px; color: var(--foreground); height: 24px;" autocomplete="off">
-              <button type="submit" aria-label="Send terminal command" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; color: var(--muted-foreground); font-family: var(--font-mono); font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all 0.2s; font-weight: bold;">
-                <span>send</span> <span style="font-size: 9px; opacity: 0.75;">↵</span>
-              </button>
-            </form>
+            <div class="metric-item">
+              <div class="metric-number">100%</div>
+              <div class="metric-label">Code Handoff</div>
+            </div>
           </div>
         </div>
       </section>
@@ -261,7 +221,7 @@
             <span>If it doesn’t sell, it doesn’t ship</span> <span class="text-primary ticker-dot">✦</span>
             <span>Built for ROI, not for awards</span> <span class="text-primary ticker-dot">✦</span>
             <span>WordPress that actually performs</span> <span class="text-primary ticker-dot">✦</span>
-            <span>Design is a sales tool, not decoration</span> <span class="text-primary ticker-dot">✦</span>
+            <span>Sub-second load times &amp; clean code</span> <span class="text-primary ticker-dot">✦</span>
           </div>
           <!-- Duplicate content for infinite scroll loop -->
           <div class="marquee-content" aria-hidden="true">
@@ -271,251 +231,118 @@
             <span>If it doesn’t sell, it doesn’t ship</span> <span class="text-primary ticker-dot">✦</span>
             <span>Built for ROI, not for awards</span> <span class="text-primary ticker-dot">✦</span>
             <span>WordPress that actually performs</span> <span class="text-primary ticker-dot">✦</span>
-            <span>Design is a sales tool, not decoration</span> <span class="text-primary ticker-dot">✦</span>
+            <span>Sub-second load times &amp; clean code</span> <span class="text-primary ticker-dot">✦</span>
           </div>
         </div>
       </div>
 
-      
-      
-
-      <!-- Services Split Preview Section -->
-      <section class="section-padding border-t" style="background: var(--bg1);">
+      <!-- Core Capabilities Bento Section -->
+      <section class="section-padding border-t" style="background: var(--bg1);" id="home-capabilities">
         <div class="container">
-          <div class="services-split-layout" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
-            <!-- Left Column: Branding and Intro -->
-            <div class="services-split-left" style="position: sticky; top: 120px;">
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1.5rem;">
-                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--primary); color: #000; font-weight: 900; font-size: 0.95rem; border-radius: 4px;">E</span>
-                <span style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--foreground); letter-spacing: 0.05em; text-transform: uppercase;">GMK EMON</span>
-              </div>
-              <h2 class="section-heading" style="font-size: 3rem; line-height: 1.15; margin-bottom: 2rem; text-align: left;">Digital solutions that <span class="text-gradient">make an impact</span></h2>
-              <p class="section-subtext" style="text-align: left; max-width: 100%; margin-bottom: 2.5rem; font-size: 1rem; line-height: 1.6;">
-                Effective digital solutions aren’t built in isolation. Success comes from a seamless collaboration between strategy, creativity, and technology. I develop tailored web platforms and visual designs that drive engagement, enhance user experience, and deliver measurable results.
-              </p>
-              
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 2.5rem; text-align: left;">
-                <img src="GMK_Emon_pic.png" alt="Golam Morshed Kibria Emon" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border);">
-                <div>
-                  <h4 style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--foreground); margin: 0;">Golam Morshed Kibria Emon</h4>
-                  <p style="font-size: 0.8rem; color: var(--muted-foreground); margin: 0;">WordPress &amp; Frontend Developer</p>
-                </div>
-              </div>
-              
-              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
-                <a href="#contact" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: space-between; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; width: fit-content; gap: 1rem;">
-                  <span>Let's start working</span>
-                  <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: #000; color: var(--primary); border-radius: 50%; font-size: 0.8rem;"><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-                <a href="#client-portal" class="btn-outline" style="display: inline-flex; align-items: center; padding: 0.8rem 1.25rem; border-radius: 50px; text-decoration: none; font-family: var(--font-heading); font-weight: 700; font-size: 0.88rem; gap: 0.5rem;">
-                  <span>Inspect Client Workspace</span> ➔
-                </a>
-              </div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px dashed var(--border); padding-bottom: 1.5rem; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;">
+            <div style="text-align: left;">
+              <span class="section-tag">// CORE CAPABILITIES</span>
+              <h2 class="section-heading" style="font-size: 2.8rem; line-height: 1.15; margin-top: 0.5rem; margin-bottom: 0;">Engineered for impact.</h2>
             </div>
-            
-            <!-- Right Column: Vertical Service Cards -->
-            <div class="services-split-right" style="display: flex; flex-direction: column; gap: 2rem;">
-              <!-- Card 1: Web Experiences -->
-              <div class="service-image-card" style="background-image: linear-gradient(rgba(12, 14, 13, 0.78), rgba(12, 14, 13, 0.86)), url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80'); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; min-height: 260px; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
-                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: #ffffff; margin: 0; text-align: left;">WEB EXPERIENCES</h3>
-                    <span style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: rgba(255, 255, 255, 0.4);">(01)</span>
-                  </div>
-                  <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--primary); font-weight: 600; margin-bottom: 0.85rem; letter-spacing: 0.04em;">
-                    WordPress • Frontend • Shopify • Webflow
-                  </div>
-                  <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.75); line-height: 1.5; max-width: 450px; margin: 0; text-align: left;">
-                    High-speed custom WordPress, WooCommerce, and Headless Next.js builds. Clean architectures engineered for conversions, Core Web Vitals, and effortless client management.
-                  </p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
-                  <a href="#service/wordpress" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
-                    Inspect Capability <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
-                  </a>
-                  <a href="#service/wordpress" aria-label="Inspect Web Experiences capability" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Card 2: Product Systems -->
-              <div class="service-image-card" style="background-image: linear-gradient(rgba(12, 14, 13, 0.78), rgba(12, 14, 13, 0.86)), url('https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=800&q=80'); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; min-height: 260px; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
-                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: #ffffff; margin: 0; text-align: left;">PRODUCT SYSTEMS</h3>
-                    <span style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: rgba(255, 255, 255, 0.4);">(02)</span>
-                  </div>
-                  <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--primary); font-weight: 600; margin-bottom: 0.85rem; letter-spacing: 0.04em;">
-                    Next.js • APIs • Dashboards • Automation
-                  </div>
-                  <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.75); line-height: 1.5; max-width: 450px; margin: 0; text-align: left;">
-                    Fullstack web applications, REST APIs, and automated digital workflows. Built with React, Node/Python, and Supabase to solve complex operational problems.
-                  </p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
-                  <a href="#service/product-systems" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
-                    Inspect Capability <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
-                  </a>
-                  <a href="#service/product-systems" aria-label="Inspect Product Systems capability" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Card 3: AI Integration -->
-              <div class="service-image-card" style="background-image: linear-gradient(rgba(12, 14, 13, 0.78), rgba(12, 14, 13, 0.86)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80'); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; min-height: 260px; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
-                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: #ffffff; margin: 0; text-align: left;">AI INTEGRATION</h3>
-                    <span style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: rgba(255, 255, 255, 0.4);">(03)</span>
-                  </div>
-                  <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--primary); font-weight: 600; margin-bottom: 0.85rem; letter-spacing: 0.04em;">
-                    LLMs • RAG • AI Tools • Intelligent Features
-                  </div>
-                  <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.75); line-height: 1.5; max-width: 450px; margin: 0; text-align: left;">
-                    Intelligent vector indexing, local LLM integrations, and context-aware customer bots. Practical artificial intelligence embedded directly into production business surfaces.
-                  </p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
-                  <a href="#service/ai-ml" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
-                    Inspect Capability <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
-                  </a>
-                  <a href="#service/ai-ml" aria-label="Inspect AI Integration capability" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--muted-foreground); text-align: right; user-select: none;">
+              <div>~/services/index</div>
+              <div style="color: var(--primary); font-weight: bold; margin-top: 2px;">3 domains active</div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Bento Grid (Statement) Section -->
-      <section class="section-padding border-t">
-        <div class="container">
-          <!-- Statement Header -->
-          <div class="section-header text-left mb-12">
-            <span class="section-tag">STATEMENT.TXT</span>
-            <h2 class="section-heading text-5xl">
-              I combine code and design<br>
-              to build <span class="text-primary font-bold">high-performance websites.</span>
-            </h2>
-            <p class="section-subtext max-w-2xl mt-4">
-              Clean WordPress themes, modern custom frontends, and direct communication &mdash; with your business goals and page performance in mind.
-            </p>
-          </div>
-
-          <!-- Bento Grid Container -->
-          <div class="statement-bento-grid">
-            <!-- Box 1: Focus & Experience -->
-            <div class="bento-box bento-metrics card-outline" style="position: relative; overflow: hidden; padding: 2rem;">
-              <span class="bento-badge" style="color: var(--primary); background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em;">FOCUS &amp; EXPERTISE</span>
-              
-              <div class="bento-metrics-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem;">
-                <!-- Col 1 -->
-                <div class="bento-metric-col" style="text-align: left; position: relative;">
-                  <div class="bento-metric-val" style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; color: var(--foreground); line-height: 1;">2023-26</div>
-                  <div class="bento-metric-lbl" style="font-size: 0.75rem; color: var(--muted-foreground); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Active shipping</div>
-                  <div style="width: 32px; height: 3px; background: var(--primary); border-radius: 2px; margin-top: 0.75rem;"></div>
+          <div class="capability-grid">
+            <!-- 01 Web Experiences -->
+            <div class="capability-card">
+              <div class="corner-border tl" style="top: -1px; left: -1px;"></div>
+              <div class="corner-border tr" style="top: -1px; right: -1px;"></div>
+              <div class="corner-border bl" style="bottom: -1px; left: -1px;"></div>
+              <div class="corner-border br" style="bottom: -1px; right: -1px;"></div>
+              <div>
+                <div class="capability-header">
+                  <h3 class="capability-title">WEB EXPERIENCES</h3>
+                  <span class="capability-num">01</span>
                 </div>
-
-                <!-- Col 2 (with divider) -->
-                <div class="bento-metric-col" style="text-align: left; position: relative; padding-left: 1.5rem; border-left: 1px solid var(--border);">
-                  <div class="bento-metric-val" style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; color: var(--foreground); line-height: 1;">25+</div>
-                  <div class="bento-metric-lbl" style="font-size: 0.75rem; color: var(--muted-foreground); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Projects completed</div>
-                  <div style="width: 32px; height: 3px; background: var(--primary); border-radius: 2px; margin-top: 0.75rem;"></div>
-                </div>
-
-                <!-- Col 3 (with divider) -->
-                <div class="bento-metric-col" style="text-align: left; position: relative; padding-left: 1.5rem; border-left: 1px solid var(--border);">
-                  <div class="bento-metric-val" style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; color: var(--foreground); line-height: 1;">4.9<span style="color: var(--primary);">/5</span></div>
-                  <div class="bento-metric-lbl" style="font-size: 0.75rem; color: var(--muted-foreground); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Client feedback*</div>
-                  <div style="width: 32px; height: 3px; background: var(--primary); border-radius: 2px; margin-top: 0.75rem;"></div>
+                <div class="capability-subtitle">WordPress • Frontend • Shopify • Webflow</div>
+                <p class="capability-desc">
+                  High-speed custom WordPress, WooCommerce, and Headless Next.js builds. Clean architectures engineered for conversions, Core Web Vitals, and effortless client management.
+                </p>
+                <div class="capability-pills">
+                  <span class="capability-pill">WordPress</span>
+                  <span class="capability-pill">Next.js</span>
+                  <span class="capability-pill">WooCommerce</span>
+                  <span class="capability-pill">Shopify</span>
+                  <span class="capability-pill">Webflow</span>
                 </div>
               </div>
+              <a href="#service/wordpress" class="capability-link">
+                <span>Inspect Capability</span>
+                <span class="capability-arrow-icon"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
             </div>
 
-            <!-- Box 2: Core Philosophy -->
-            <div class="bento-box bento-review card-outline" style="position: relative; overflow: hidden; padding: 2rem;">
-              <!-- Subtle quote icon in background -->
-              <i class="fa-solid fa-quote-left" style="position: absolute; right: 20px; bottom: 20px; font-size: 6rem; color: rgba(34, 197, 94, 0.03); pointer-events: none; z-index: 1;"></i>
-              <div class="bento-review-header">
-                <span class="bento-badge" style="color: var(--primary); background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em;">PHILOSOPHY</span>
-              </div>
-              <p class="bento-review-quote" style="font-family: var(--font-body); font-style: italic; font-size: 1.05rem; line-height: 1.6; color: var(--foreground); margin-bottom: 1.5rem; margin-top: 0.5rem;">"I combine clean frontend code with functional design to build websites that load fast, look professional, and work for your business."</p>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(34, 197, 94, 0.1); border: 1px solid var(--primary); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; color: var(--primary); font-family: var(--font-heading);">GE</div>
-                <div style="display: flex; flex-direction: column; text-align: left;">
-                  <span class="bento-review-author" style="font-size: 0.8rem; font-weight: 700; color: var(--foreground); letter-spacing: 0.05em; font-family: var(--font-heading); text-transform: uppercase; margin: 0; line-height: 1.2;">GMK Emon</span>
-                  <span style="font-size: 0.65rem; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.2;">Conversion-Focused Developer</span>
+            <!-- 02 Product Systems -->
+            <div class="capability-card">
+              <div class="corner-border tl" style="top: -1px; left: -1px;"></div>
+              <div class="corner-border tr" style="top: -1px; right: -1px;"></div>
+              <div class="corner-border bl" style="bottom: -1px; left: -1px;"></div>
+              <div class="corner-border br" style="bottom: -1px; right: -1px;"></div>
+              <div>
+                <div class="capability-header">
+                  <h3 class="capability-title">PRODUCT SYSTEMS</h3>
+                  <span class="capability-num">02</span>
+                </div>
+                <div class="capability-subtitle">Next.js • APIs • Dashboards • Automation</div>
+                <p class="capability-desc">
+                  Fullstack web applications, REST APIs, and automated digital workflows. Built with React, Node/Python, and Supabase to solve complex operational problems.
+                </p>
+                <div class="capability-pills">
+                  <span class="capability-pill">React</span>
+                  <span class="capability-pill">FastAPI</span>
+                  <span class="capability-pill">Node.js</span>
+                  <span class="capability-pill">Supabase</span>
+                  <span class="capability-pill">PostgreSQL</span>
                 </div>
               </div>
+              <a href="#service/product-systems" class="capability-link">
+                <span>Inspect Capability</span>
+                <span class="capability-arrow-icon"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
             </div>
 
-            <!-- Box 3: Capabilities -->
-            <div class="bento-box bento-capabilities card-outline" style="position: relative; overflow: hidden; padding: 2rem;">
-              <span class="bento-badge" style="color: var(--primary); background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em;">CAPABILITIES</span>
-              
-              <div class="capabilities-capsules" style="display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.5rem;">
-                <span class="cap-capsule" style="background: rgba(34, 197, 94, 0.06); border-color: rgba(34, 197, 94, 0.2); color: var(--foreground); font-weight: 600;"><i class="fa-brands fa-wordpress text-primary" style="margin-right: 5px;"></i> WordPress</span>
-                <span class="cap-capsule"><i class="fa-solid fa-code" style="margin-right: 5px; color: var(--primary);"></i> Frontend Dev</span>
-                <span class="cap-capsule"><i class="fa-brands fa-shopify" style="margin-right: 5px; color: var(--primary);"></i> Shopify</span>
-                <span class="cap-capsule"><i class="fa-solid fa-cubes" style="margin-right: 5px; color: var(--primary);"></i> Next.js</span>
-                <span class="cap-capsule"><i class="fa-solid fa-network-wired" style="margin-right: 5px; color: var(--primary);"></i> REST APIs</span>
-                <span class="cap-capsule"><i class="fa-solid fa-chart-line" style="margin-right: 5px; color: var(--primary);"></i> Dashboards</span>
-                <span class="cap-capsule"><i class="fa-solid fa-brain" style="margin-right: 5px; color: var(--primary);"></i> AI &amp; LLMs</span>
-                <span class="cap-capsule"><i class="fa-solid fa-bolt" style="margin-right: 5px; color: var(--primary);"></i> Automation</span>
+            <!-- 03 AI Integration -->
+            <div class="capability-card">
+              <div class="corner-border tl" style="top: -1px; left: -1px;"></div>
+              <div class="corner-border tr" style="top: -1px; right: -1px;"></div>
+              <div class="corner-border bl" style="bottom: -1px; left: -1px;"></div>
+              <div class="corner-border br" style="bottom: -1px; right: -1px;"></div>
+              <div>
+                <div class="capability-header">
+                  <h3 class="capability-title">AI INTEGRATION</h3>
+                  <span class="capability-num">03</span>
+                </div>
+                <div class="capability-subtitle">LLMs • RAG • AI Tools • Intelligent Features</div>
+                <p class="capability-desc">
+                  Intelligent vector indexing, local LLM integrations, and context-aware customer bots. Practical artificial intelligence embedded directly into production business surfaces.
+                </p>
+                <div class="capability-pills">
+                  <span class="capability-pill">RAG Pipelines</span>
+                  <span class="capability-pill">LlamaIndex</span>
+                  <span class="capability-pill">OpenAI / Claude</span>
+                  <span class="capability-pill">Vector Search</span>
+                  <span class="capability-pill">AI Chatbots</span>
+                </div>
               </div>
+              <a href="#service/ai-ml" class="capability-link">
+                <span>Inspect Capability</span>
+                <span class="capability-arrow-icon"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
             </div>
-
-            <!-- Box 4: Now-Building -->
-            <div class="bento-box bento-nowbuilding card-outline" style="padding: 2rem; display: flex; flex-direction: column; position: relative; overflow: hidden;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; position: relative; z-index: 2;">
-                <span class="bento-badge" style="color: var(--primary); background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em; margin: 0;">NOW-BUILDING</span>
-                <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); padding: 3px 10px; border-radius: 100px; font-size: 0.65rem; font-family: ui-monospace, monospace; color: var(--primary); font-weight: bold; letter-spacing: 0.05em;">
-                  <span class="shimmer-dot" style="width: 6px; height: 6px; border-radius: 50%; background: var(--primary); display: inline-block; box-shadow: 0 0 8px var(--primary); animation: pulse-glow 1.5s ease-in-out infinite;"></span>
-                  LIVE STATUS
-                </div>
-              </div>
-              
-              <div class="nowbuilding-title-row" style="display: flex; align-items: center; gap: 8px; margin-top: 0.5rem; position: relative; z-index: 2;">
-                <i class="fa-solid fa-bolt text-primary" style="font-size: 1.1rem;"></i>
-                <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--foreground); margin: 0;">WordPress + React</h4>
-              </div>
-              <p class="nowbuilding-desc" style="font-size: 0.85rem; color: var(--muted-foreground); margin-top: 0.5rem; margin-bottom: 1.5rem; line-height: 1.5; position: relative; z-index: 2;">Conversion-first builds shipping this week.</p>
-              
-              <div class="nowbuilding-progress-bar" style="height: 6px; background: rgba(0, 0, 0, 0.06); border-radius: 100px; overflow: hidden; position: relative; margin-top: auto; z-index: 2;">
-                <!-- Fallback background check for dark mode theme -->
-                <style>
-                  .html-theme-dark .nowbuilding-progress-bar { background: rgba(255, 255, 255, 0.05) !important; }
-                </style>
-                <div class="nowbuilding-progress-fill" style="position: absolute; top: 0; left: 0; height: 100%; width: 75%; background: linear-gradient(90deg, var(--primary), #15803d); border-radius: 100px; overflow: hidden; height: 100%;">
-                  <div style="position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); animation: progress-shimmer 2s infinite; transform: translateX(-100%);"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Box 5: Case-Studies (Full Width) -->
-            <a href="#portfolio" class="bento-box bento-casestudies card-outline card-hover" style="padding: 2.2rem; display: block; text-decoration: none; transition: all 0.3s ease; position: relative; overflow: hidden;">
-              <div class="casestudies-inner" style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2;">
-                <div style="text-align: left;">
-                  <span class="bento-badge" style="color: var(--primary); background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.75rem; display: inline-block;">CASE-STUDIES</span>
-                  <h3 class="casestudies-title" style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 700; color: var(--foreground); line-height: 1.2; margin: 0;">See the numbers behind the work</h3>
-                  <p style="font-size: 0.88rem; color: var(--muted-foreground); margin-top: 0.5rem; margin-bottom: 0;">Detailed breakdowns of conversions, core speed audits, and clean WordPress client deployments.</p>
-                </div>
-                
-                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(34, 197, 94, 0.06); border: 1px solid rgba(34, 197, 94, 0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
-                  <i class="fa-solid fa-arrow-right-long" style="color: var(--primary); font-size: 1.2rem;"></i>
-                </div>
-              </div>
-            </a>
           </div>
         </div>
       </section>
 
       <!-- Selected Projects / Featured Work Section -->
-      <section class="section-padding border-t" style="background: var(--bg1);" id="home-featured-projects">
+      <section class="section-padding border-t" style="background: var(--bg0);" id="home-featured-projects">
         <div class="container">
           <!-- Section Monospace Header -->
           <div style="display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px dashed var(--border); padding-bottom: 1.5rem; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;">
@@ -532,24 +359,30 @@
           <!-- Project Cards Grid -->
           <div class="grid-two" style="gap: 2rem;">
             <!-- Project 1 -->
-            <div class="card-outline card-hover" style="position: relative; overflow: hidden; padding: 2rem; display: flex; flex-direction: column; min-height: 280px; transition: all 0.3s ease;">
-              <!-- Corner borders -->
+            <div class="card-outline card-hover" style="position: relative; overflow: hidden; padding: 2.2rem; display: flex; flex-direction: column; min-height: 300px; transition: all 0.3s ease;">
               <div class="corner-border tl" style="top: -1px; left: -1px;"></div>
               <div class="corner-border tr" style="top: -1px; right: -1px;"></div>
               <div class="corner-border bl" style="bottom: -1px; left: -1px;"></div>
               <div class="corner-border br" style="bottom: -1px; right: -1px;"></div>
 
-              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); font-weight: bold; letter-spacing: 0.05em; margin-bottom: 1.25rem;">[01]</div>
-              <h3 class="card-title" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--foreground); line-height: 1.2; margin: 0 0 0.5rem 0; text-align: left;">Headless E-Commerce Rebuild</h3>
-              <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--muted-foreground); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); font-weight: bold; letter-spacing: 0.05em;">[01]</span>
+                <span class="metric-pill">+42% Conversions · &lt;1.2s Load</span>
+              </div>
+              <h3 class="card-title" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--foreground); line-height: 1.2; margin: 0 0 0.4rem 0; text-align: left;">Headless E-Commerce Rebuild</h3>
+              <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--muted-foreground); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
                 <span>2025</span>
                 <span style="color: var(--border);">·</span>
                 <span>WordPress / Next.js</span>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.75rem; font-size: 0.88rem; line-height: 1.5; text-align: left;">
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Problem:</span> <span style="color: var(--muted-foreground);">Monolithic WooCommerce architecture suffering high bounce rates and 4.2s page loads.</span></div>
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Solution:</span> <span style="color: var(--muted-foreground);">Migrated to headless Next.js frontend with cached static endpoints and streamlined checkout.</span></div>
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Result:</span> <span style="color: var(--foreground); font-weight: 600;">+42% checkout conversions, &lt;1.2s load speeds, 98 mobile PageSpeed score.</span></div>
+              <p style="color: var(--muted-foreground); font-size: 0.9rem; line-height: 1.6; margin: 0 0 1.25rem 0; text-align: left;">
+                Migrated a sluggish monolithic WooCommerce store to a headless Next.js frontend with cached static edge endpoints and streamlined checkout.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem;">
+                <span class="capability-pill">WordPress</span>
+                <span class="capability-pill">Next.js</span>
+                <span class="capability-pill">Tailwind CSS</span>
+                <span class="capability-pill">Stripe API</span>
               </div>
               <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px dashed var(--border); padding-top: 1.25rem; margin-top: auto;">
                 <a href="#case-study-ecommerce" style="color: var(--primary); text-decoration: none; font-size: 0.85rem; font-weight: 700; font-family: var(--font-heading); display: inline-flex; align-items: center; gap: 6px;">
@@ -562,24 +395,30 @@
             </div>
 
             <!-- Project 2 -->
-            <div class="card-outline card-hover" style="position: relative; overflow: hidden; padding: 2rem; display: flex; flex-direction: column; min-height: 280px; transition: all 0.3s ease;">
-              <!-- Corner borders -->
+            <div class="card-outline card-hover" style="position: relative; overflow: hidden; padding: 2.2rem; display: flex; flex-direction: column; min-height: 300px; transition: all 0.3s ease;">
               <div class="corner-border tl" style="top: -1px; left: -1px;"></div>
               <div class="corner-border tr" style="top: -1px; right: -1px;"></div>
               <div class="corner-border bl" style="bottom: -1px; left: -1px;"></div>
               <div class="corner-border br" style="bottom: -1px; right: -1px;"></div>
 
-              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); font-weight: bold; letter-spacing: 0.05em; margin-bottom: 1.25rem;">[02]</div>
-              <h3 class="card-title" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--foreground); line-height: 1.2; margin: 0 0 0.5rem 0; text-align: left;">ECG Card Anomalies AI</h3>
-              <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--muted-foreground); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); font-weight: bold; letter-spacing: 0.05em;">[02]</span>
+                <span class="metric-pill">98.4% Accuracy · &lt;50ms Latency</span>
+              </div>
+              <h3 class="card-title" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--foreground); line-height: 1.2; margin: 0 0 0.4rem 0; text-align: left;">ECG Card Anomalies AI</h3>
+              <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--muted-foreground); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
                 <span>2024</span>
                 <span style="color: var(--border);">·</span>
                 <span>Python / TensorFlow</span>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.75rem; font-size: 0.88rem; line-height: 1.5; text-align: left;">
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Problem:</span> <span style="color: var(--muted-foreground);">Clinical cardiac arrhythmia signals are difficult to classify in real-time on edge devices.</span></div>
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Solution:</span> <span style="color: var(--muted-foreground);">Engineered lightweight 1D-CNN pipeline classifying MIT-BIH Arrhythmia streams via FastAPI.</span></div>
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Result:</span> <span style="color: var(--foreground); font-weight: 600;">98.4% validation accuracy with sub-50ms inference latency.</span></div>
+              <p style="color: var(--muted-foreground); font-size: 0.9rem; line-height: 1.6; margin: 0 0 1.25rem 0; text-align: left;">
+                Engineered lightweight 1D-CNN pipeline classifying MIT-BIH cardiac arrhythmia streams in real-time with sub-50ms inference latency.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem;">
+                <span class="capability-pill">Python</span>
+                <span class="capability-pill">TensorFlow</span>
+                <span class="capability-pill">FastAPI</span>
+                <span class="capability-pill">Docker</span>
               </div>
               <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px dashed var(--border); padding-top: 1.25rem; margin-top: auto;">
                 <a href="#case-study-ecg" style="color: var(--primary); text-decoration: none; font-size: 0.85rem; font-weight: 700; font-family: var(--font-heading); display: inline-flex; align-items: center; gap: 6px;">
@@ -592,24 +431,30 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="card-outline card-hover" style="position: relative; overflow: hidden; padding: 2rem; display: flex; flex-direction: column; min-height: 280px; transition: all 0.3s ease;">
-              <!-- Corner borders -->
+            <div class="card-outline card-hover" style="position: relative; overflow: hidden; padding: 2.2rem; display: flex; flex-direction: column; min-height: 300px; transition: all 0.3s ease;">
               <div class="corner-border tl" style="top: -1px; left: -1px;"></div>
               <div class="corner-border tr" style="top: -1px; right: -1px;"></div>
               <div class="corner-border bl" style="bottom: -1px; left: -1px;"></div>
               <div class="corner-border br" style="bottom: -1px; right: -1px;"></div>
 
-              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); font-weight: bold; letter-spacing: 0.05em; margin-bottom: 1.25rem;">[03]</div>
-              <h3 class="card-title" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--foreground); line-height: 1.2; margin: 0 0 0.5rem 0; text-align: left;">Autonomous LeadGen Chatbot</h3>
-              <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--muted-foreground); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); font-weight: bold; letter-spacing: 0.05em;">[03]</span>
+                <span class="metric-pill">3.2x Leads · Automated Qual</span>
+              </div>
+              <h3 class="card-title" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--foreground); line-height: 1.2; margin: 0 0 0.4rem 0; text-align: left;">Autonomous LeadGen Chatbot</h3>
+              <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--muted-foreground); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
                 <span>2025</span>
                 <span style="color: var(--border);">·</span>
                 <span>Python / LlamaIndex</span>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.75rem; font-size: 0.88rem; line-height: 1.5; text-align: left;">
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Problem:</span> <span style="color: var(--muted-foreground);">Inbound website visitors dropping off without qualifying scopes or booking discovery calls.</span></div>
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Solution:</span> <span style="color: var(--muted-foreground);">Deployed retrieval-augmented LLM qualifying visitor budgets and syncing prospects to CRM.</span></div>
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Result:</span> <span style="color: var(--foreground); font-weight: 600;">3.2x higher lead capture rate with automated calendar scheduling.</span></div>
+              <p style="color: var(--muted-foreground); font-size: 0.9rem; line-height: 1.6; margin: 0 0 1.25rem 0; text-align: left;">
+                Deployed retrieval-augmented LLM agent that qualifies inbound visitor budgets, answers technical queries, and syncs high-intent leads to CRM.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem;">
+                <span class="capability-pill">Python</span>
+                <span class="capability-pill">LlamaIndex</span>
+                <span class="capability-pill">OpenAI</span>
+                <span class="capability-pill">CRM Integration</span>
               </div>
               <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px dashed var(--border); padding-top: 1.25rem; margin-top: auto;">
                 <a href="#case-study-leadbot" style="color: var(--primary); text-decoration: none; font-size: 0.85rem; font-weight: 700; font-family: var(--font-heading); display: inline-flex; align-items: center; gap: 6px;">
@@ -622,24 +467,30 @@
             </div>
 
             <!-- Project 4 -->
-            <div class="card-outline card-hover" style="position: relative; overflow: hidden; padding: 2rem; display: flex; flex-direction: column; min-height: 280px; transition: all 0.3s ease;">
-              <!-- Corner borders -->
+            <div class="card-outline card-hover" style="position: relative; overflow: hidden; padding: 2.2rem; display: flex; flex-direction: column; min-height: 300px; transition: all 0.3s ease;">
               <div class="corner-border tl" style="top: -1px; left: -1px;"></div>
               <div class="corner-border tr" style="top: -1px; right: -1px;"></div>
               <div class="corner-border bl" style="bottom: -1px; left: -1px;"></div>
               <div class="corner-border br" style="bottom: -1px; right: -1px;"></div>
 
-              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); font-weight: bold; letter-spacing: 0.05em; margin-bottom: 1.25rem;">[04]</div>
-              <h3 class="card-title" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--foreground); line-height: 1.2; margin: 0 0 0.5rem 0; text-align: left;">BuyWise Shopping Matrix</h3>
-              <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--muted-foreground); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); font-weight: bold; letter-spacing: 0.05em;">[04]</span>
+                <span class="metric-pill">&lt;200ms Sync · Offline First</span>
+              </div>
+              <h3 class="card-title" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--foreground); line-height: 1.2; margin: 0 0 0.4rem 0; text-align: left;">BuyWise Shopping Matrix</h3>
+              <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--muted-foreground); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
                 <span>2026</span>
                 <span style="color: var(--border);">·</span>
                 <span>React Native / Supabase</span>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.75rem; font-size: 0.88rem; line-height: 1.5; text-align: left;">
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Problem:</span> <span style="color: var(--muted-foreground);">Shoppers overpaying across grocery retailers due to fragmented, delayed price tracking.</span></div>
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Solution:</span> <span style="color: var(--muted-foreground);">Built React Native application with background scraping workers and Supabase sync.</span></div>
-                <div><span style="color: var(--primary); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Result:</span> <span style="color: var(--foreground); font-weight: 600;">Seamless offline cache, multi-store comparison, and instant cart optimizations.</span></div>
+              <p style="color: var(--muted-foreground); font-size: 0.9rem; line-height: 1.6; margin: 0 0 1.25rem 0; text-align: left;">
+                Engineered multi-store cross-retailer pricing tracker with background scraping workers, offline cache, and instant cart optimizations.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem;">
+                <span class="capability-pill">React Native</span>
+                <span class="capability-pill">Supabase</span>
+                <span class="capability-pill">PostgreSQL</span>
+                <span class="capability-pill">Node.js</span>
               </div>
               <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px dashed var(--border); padding-top: 1.25rem; margin-top: auto;">
                 <a href="#case-study-buywise" style="color: var(--primary); text-decoration: none; font-size: 0.85rem; font-weight: 700; font-family: var(--font-heading); display: inline-flex; align-items: center; gap: 6px;">
@@ -662,41 +513,65 @@
         </div>
       </section>
 
-      <!-- Three Rules I Never Break -->
-      <section class="section-padding">
-        <div class="container">
-          <div class="section-header text-center">
-            <span class="section-tag">// HOW I OPERATE</span>
-            <h2 class="section-heading">Three rules I never break.</h2>
+      <!-- Interactive Terminal Ask Me Console -->
+      <section class="section-padding border-t" style="background: var(--bg1); padding: 4.5rem 0;" id="home-ask-me">
+        <div class="container" style="max-width: 900px;">
+          <div class="section-header text-center" style="margin-bottom: 2.5rem;">
+            <span class="section-tag">// INTERACTIVE SHELL</span>
+            <h2 class="section-heading" style="font-size: 2.2rem;">Run a diagnostic on Emon's stack.</h2>
+            <p class="section-subtext">Click a query preset below or enter a custom prompt to ask the terminal console directly.</p>
           </div>
-          <div class="grid-three">
-            <div class="card-outline card-hover rule-card">
-              <div class="rule-card-number">01</div>
-              <div class="card-icon-box"><i class="fa-solid fa-chart-line"></i></div>
-              <h3 class="card-title">Results Over Aesthetics</h3>
-              <p class="card-desc">Pretty doesn't pay bills. I build digital structures engineered to convert visitors into paying customers.</p>
+
+          <!-- Terminal Chat Console Widget -->
+          <div class="card-outline" style="position: relative; overflow: hidden; background: rgba(12, 14, 13, 0.4); border-color: rgba(34, 197, 94, 0.1); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; min-height: 480px; box-shadow: var(--shadow-card); text-align: left;">
+            <div class="corner-border tl" style="top: -1px; left: -1px;"></div>
+            <div class="corner-border tr" style="top: -1px; right: -1px;"></div>
+            <div class="corner-border bl" style="bottom: -1px; left: -1px;"></div>
+            <div class="corner-border br" style="bottom: -1px; right: -1px;"></div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); font-size: 12px; color: var(--muted-foreground); border-bottom: 1px dashed var(--border); padding-bottom: 0.75rem; margin-bottom: 1rem; user-select: none;">
+              <div style="display: flex; gap: 6px;">
+                <span style="width: 8px; height: 8px; background: #3f3f46; border-radius: 50%;"></span>
+                <span style="width: 8px; height: 8px; background: #3f3f46; border-radius: 50%;"></span>
+                <span style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px var(--primary);"></span>
+              </div>
+              <span style="letter-spacing: 0.05em; color: var(--muted-foreground);">~/ask-emon.sh</span>
+              <div style="display: flex; align-items: center; gap: 6px; color: var(--primary); font-weight: bold;">
+                <span class="shimmer-dot" style="width: 6px; height: 6px; border-radius: 50%; background: var(--primary); display: inline-block; box-shadow: 0 0 8px var(--primary); animation: pulse-glow 1.5s ease-in-out infinite;"></span>
+                ready
+              </div>
             </div>
-            <div class="card-outline card-hover rule-card">
-              <div class="rule-card-number">02</div>
-              <div class="card-icon-box"><i class="fa-solid fa-bolt"></i></div>
-              <h3 class="card-title">Speed Is A Feature</h3>
-              <p class="card-desc">Every 1s delay = 7% lost conversions. I compile fast, lightweight sites that load in under 2 seconds.</p>
+
+            <div id="terminal-stream-log" style="flex: 1; overflow-y: auto; min-height: 280px; max-height: 320px; padding: 0.5rem; display: flex; flex-direction: column; scrollbar-width: thin; scroll-behavior: smooth;">
+              <div style="align-self: flex-start; text-align: left; max-width: 85%; margin-bottom: 1.5rem;">
+                <div style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); margin-bottom: 4px;">› emon-bot</div>
+                <div style="color: var(--foreground); font-size: 14px; line-height: 1.6;">
+                  Connected to emon-shell terminal interface. I can answer questions about Golam Morshed Kibria Emon's technical stack, services, pricing structure, and active availability. 
+                  Select one of the quick scripts below or enter a custom prompt.
+                </div>
+              </div>
             </div>
-            <div class="card-outline card-hover rule-card">
-              <div class="rule-card-number">03</div>
-              <div class="card-icon-box"><i class="fa-solid fa-database"></i></div>
-              <h3 class="card-title">Data Beats Opinions</h3>
-              <p class="card-desc">I don't make guesses. Every structural decision is backed by analytics, heatmaps, and conversion metrics.</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.65rem; padding: 1rem 0; border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border); margin-bottom: 1rem;">
+              <button type="button" class="terminal-query-btn" data-query="what is your stack?">what is your stack?</button>
+              <button type="button" class="terminal-query-btn" data-query="are you available for hire?">are you available for hire?</button>
+              <button type="button" class="terminal-query-btn" data-query="tell me about your process">tell me about your process</button>
+              <button type="button" class="terminal-query-btn" data-query="show developer rates">show developer rates</button>
             </div>
+
+            <form id="terminal-query-form" style="margin: 0; display: flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.12); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 10px;">
+              <span style="font-family: var(--font-mono); font-size: 14px; color: var(--primary); font-weight: bold; user-select: none;">›</span>
+              <input type="text" id="terminal-query-input" placeholder="ask anything about emon..." aria-label="Ask terminal a question" style="flex: 1; border: none; background: transparent; outline: none; font-family: var(--font-mono); font-size: 13.5px; color: var(--foreground); height: 24px;" autocomplete="off">
+              <button type="submit" aria-label="Send terminal command" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; color: var(--muted-foreground); font-family: var(--font-mono); font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all 0.2s; font-weight: bold;">
+                <span>send</span> <span style="font-size: 9px; opacity: 0.75;">↵</span>
+              </button>
+            </form>
           </div>
         </div>
       </section>
 
-      <!-- Comparison Section -->
-      <div class="comparison-section-placeholder"></div>
-
       <!-- Project Channel (Chat Simulator) -->
-      <section class="section-padding bg-card-dark border-y">
+      <section class="section-padding bg-card-dark border-t">
         <div class="container">
           <div class="chat-section-header" style="margin-left: auto; margin-right: auto; text-align: center;">
             <span class="section-tag">#PROJECT-CHANNEL</span>
@@ -719,141 +594,10 @@
         </div>
       </section>
 
-      <!-- De-Risk Section -->
-      <section class="section-padding bg-card-dark border-t">
-        <div class="container">
-          <div class="section-header text-left">
-            <span class="section-tag">// HOW I DE-RISK IT FOR YOU</span>
-            <h2 class="section-heading">
-              Hiring a freelancer is a risk.<br>
-              <span class="text-primary font-bold">Here’s how I remove it.</span>
-            </h2>
-            <p class="section-subtext max-w-2xl mt-4">
-              You’ve probably been burned before — missed deadlines, ghosting, a pretty site that sold nothing. These are the rules I work by, in writing, on every project.
-            </p>
-          </div>
-
-          <!-- 3x2 Grid -->
-          <div class="grid-three">
-            <div class="card-outline card-hover">
-              <div class="card-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-              <h3 class="card-title">Fixed scope, fixed price</h3>
-              <p class="card-desc">You approve the scope and the number before I start. No surprise invoices, no scope creep billing.</p>
-            </div>
-            <div class="card-outline card-hover">
-              <div class="card-icon-box"><i class="fa-solid fa-clock"></i></div>
-              <h3 class="card-title">Reply within 24 hours</h3>
-              <p class="card-desc">One thread, one owner. You always know what's shipping next and when — no chasing, no silence.</p>
-            </div>
-            <div class="card-outline card-hover">
-              <div class="card-icon-box"><i class="fa-solid fa-eye"></i></div>
-              <h3 class="card-title">You see it while it's built</h3>
-              <p class="card-desc">Staging link from day one. Watch progress live instead of waiting for a big reveal at the end.</p>
-            </div>
-            <div class="card-outline card-hover">
-              <div class="card-icon-box"><i class="fa-solid fa-key"></i></div>
-              <h3 class="card-title">You own everything</h3>
-              <p class="card-desc">Code, files, accounts, hosting — all handed over in your name. No lock-in, no hostage situation.</p>
-            </div>
-            <div class="card-outline card-hover">
-              <div class="card-icon-box"><i class="fa-solid fa-wallet"></i></div>
-              <h3 class="card-title">Milestone payments</h3>
-              <p class="card-desc">Split into stages tied to delivery. If we stop, you only paid for what's already in your hands.</p>
-            </div>
-            <div class="card-outline card-hover">
-              <div class="card-icon-box"><i class="fa-solid fa-comments"></i></div>
-              <h3 class="card-title">2 weeks of post-launch support</h3>
-              <p class="card-desc">Bugs, tweaks and questions after launch are on me. I don't disappear the moment it goes live.</p>
-            </div>
-          </div>
-
-          <!-- Bottom teardown CTA banner -->
-          <div class="teardown-cta-banner mt-8">
-            <div class="teardown-cta-left">
-              <h3 class="teardown-title">Not ready to commit? Start with a free 15-minute teardown.</h3>
-              <p class="teardown-desc">I'll review your current site and send back the three changes that would move revenue first. No pitch, no obligation — keep the notes even if we never work together.</p>
-            </div>
-            <div class="teardown-cta-right">
-              <a href="#contact" class="btn-primary"><i class="fa-solid fa-bolt"></i> Get my free teardown</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Technical Arsenal Section -->
-      <section class="section-padding border-t">
-        <div class="container">
-          <div class="section-header text-left mb-12">
-            <span class="section-tag">TOOLS</span>
-            <h2 class="section-heading text-5xl font-bold">
-              Tools I Actually Use
-            </h2>
-          </div>
-
-          <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
-            <!-- Design -->
-            <div class="card-outline card-hover skills-card">
-              <h3 class="skills-category-title"><i class="fa-solid fa-palette"></i> DESIGN</h3>
-              <div class="skills-tags-list">
-                <span class="skill-tag">Figma</span>
-                <span class="skill-tag">Photoshop</span>
-                <span class="skill-tag">Illustrator</span>
-                <span class="skill-tag">Canva</span>
-              </div>
-            </div>
-
-            <!-- Web -->
-            <div class="card-outline card-hover skills-card">
-              <h3 class="skills-category-title"><i class="fa-solid fa-globe"></i> WEB</h3>
-              <div class="skills-tags-list">
-                <span class="skill-tag">HTML</span>
-                <span class="skill-tag">CSS</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">WordPress</span>
-                <span class="skill-tag">Elementor</span>
-              </div>
-            </div>
-
-            <!-- Development -->
-            <div class="card-outline card-hover skills-card">
-              <h3 class="skills-category-title"><i class="fa-solid fa-code"></i> DEVELOPMENT</h3>
-              <div class="skills-tags-list">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">Next.js</span>
-                <span class="skill-tag">FastAPI</span>
-              </div>
-            </div>
-
-            <!-- Data / AI -->
-            <div class="card-outline card-hover skills-card">
-              <h3 class="skills-category-title"><i class="fa-solid fa-brain"></i> DATA / AI</h3>
-              <div class="skills-tags-list">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">PyTorch</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">Hugging Face</span>
-              </div>
-            </div>
-
-            <!-- Workflow -->
-            <div class="card-outline card-hover skills-card">
-              <h3 class="skills-category-title"><i class="fa-solid fa-rotate"></i> WORKFLOW</h3>
-              <div class="skills-tags-list">
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">GitHub</span>
-                <span class="skill-tag">Google Colab</span>
-                <span class="skill-tag">VS Code</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Home Insights Section -->
-      <section class="section-padding border-t" style="padding: 6.5rem 0;">
+      <section class="section-padding border-t" style="padding: 5.5rem 0;">
         <div class="container">
-          <div class="section-header text-left" style="margin-bottom: 3.5rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem;">
+          <div class="section-header text-left" style="margin-bottom: 3rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem;">
             <div>
               <span class="section-tag">// WRITING &amp; INSIGHTS</span>
               <h2 class="section-heading">Recent Insights</h2>
@@ -868,116 +612,20 @@
         </div>
       </section>
 
-      <!-- Short FAQ -->
-      <section class="section-padding">
-        <div class="container max-w-3xl">
-          <div class="section-header text-center">
-            <span class="section-tag">FAQ</span>
-            <h2 class="section-heading">Frequently Asked <span class="text-gradient">Questions</span></h2>
-          </div>
-          <div class="faq-accordion-list">
-            <!-- Project Questions -->
-            <div style="font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; margin-top: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">➔ Project</div>
-            <div class="faq-accordion-item active">
-              <button class="faq-accordion-btn">
-                <span>How long does a typical website project take?</span>
-                <i class="fa-solid fa-plus faq-accordion-icon"></i>
-              </button>
-              <div class="faq-accordion-content">
-                <p>Most custom WordPress and frontend website builds take between 2 to 4 weeks from scope approval to deployment, depending on content readiness.</p>
-              </div>
-            </div>
-            <div class="faq-accordion-item">
-              <button class="faq-accordion-btn">
-                <span>What assets or information do you need from me?</span>
-                <i class="fa-solid fa-plus faq-accordion-icon"></i>
-              </button>
-              <div class="faq-accordion-content">
-                <p>You'll need to provide: basic business goals, branding assets (logos, colors), copywriting text (or key bullet points), domain credentials, and reference sites you like.</p>
-              </div>
-            </div>
-            <div class="faq-accordion-item">
-              <button class="faq-accordion-btn">
-                <span>Can I provide my own design wireframes or Figma screens?</span>
-                <i class="fa-solid fa-plus faq-accordion-icon"></i>
-              </button>
-              <div class="faq-accordion-content">
-                <p>Yes. If you have complete Figma screens or wireframe blueprints, I will translate them into clean, responsive web code with high layout precision.</p>
-              </div>
-            </div>
-
-            <!-- Pricing Questions -->
-            <div style="font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; margin-top: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">➔ Pricing &amp; Scope</div>
-            <div class="faq-accordion-item">
-              <button class="faq-accordion-btn">
-                <span>How do you price projects? Fixed or hourly?</span>
-                <i class="fa-solid fa-plus faq-accordion-icon"></i>
-              </button>
-              <div class="faq-accordion-content">
-                <p>I work on a fixed-scope, flat-rate basis. We agree on the layout structure, page counts, and functionalities first, so you know the exact project cost before we start.</p>
-              </div>
-            </div>
-            <div class="faq-accordion-item">
-              <button class="faq-accordion-btn">
-                <span>What is included in the project quote?</span>
-                <i class="fa-solid fa-plus faq-accordion-icon"></i>
-              </button>
-              <div class="faq-accordion-content">
-                <p>The quote covers custom design/development, mobile styling, speed optimization, contact forms setup, standard SEO tags, domain configuration, and a 2-week warranty support.</p>
-              </div>
-            </div>
-
-            <!-- Ownership Questions -->
-            <div style="font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; margin-top: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">➔ Ownership &amp; Edits</div>
-            <div class="faq-accordion-item">
-              <button class="faq-accordion-btn">
-                <span>Who owns the website and source files after launch?</span>
-                <i class="fa-solid fa-plus faq-accordion-icon"></i>
-              </button>
-              <div class="faq-accordion-content">
-                <p>You do. 100% of the code, custom styling sheets, WordPress database, and design assets are transferred directly to your control upon final payment.</p>
-              </div>
-            </div>
-            <div class="faq-accordion-item">
-              <button class="faq-accordion-btn">
-                <span>Will I be able to edit page content myself later?</span>
-                <i class="fa-solid fa-plus faq-accordion-icon"></i>
-              </button>
-              <div class="faq-accordion-content">
-                <p>Yes. I configure WordPress utilizing clean Gutenberg or Elementor blocks and supply a short screencast walkthrough video demonstrating how to update text, post blogs, and manage images.</p>
-              </div>
-            </div>
-
-            <!-- Working Together Questions -->
-            <div style="font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; margin-top: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">➔ Collaboration</div>
-            <div class="faq-accordion-item">
-              <button class="faq-accordion-btn">
-                <span>How do you handle remote communication and timezones?</span>
-                <i class="fa-solid fa-plus faq-accordion-icon"></i>
-              </button>
-              <div class="faq-accordion-content">
-                <p>I collaborate asynchronously with clients globally. I provide direct email updates, shared project dashboard links (Trello/Kanban), and scheduled milestone reviews at your convenience.</p>
-              </div>
-            </div>
-            <div class="faq-accordion-item">
-              <button class="faq-accordion-btn">
-                <span>Do you offer post-launch support?</span>
-                <i class="fa-solid fa-plus faq-accordion-icon"></i>
-              </button>
-              <div class="faq-accordion-content">
-                <p>Every website project includes 2 weeks of free post-launch support to resolve any formatting bugs, tracking test errors, or hosting hiccups that occur during deployment.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Action Banner -->
-      <section class="section-padding border-t bg-gradient-glow relative">
+      <section class="section-padding border-t bg-gradient-glow relative" style="padding: 6rem 0;">
         <div class="container text-center max-w-2xl relative-z">
-          <h2 class="section-heading text-4xl mb-4">Your Competitors Are Already Building. <span class="text-gradient">What's Yours?</span></h2>
-          <p class="section-subtext mb-8">Ready to stop losing money to a broken website? Let's build the system that turns clicks into customers.</p>
-          <a href="#contact" class="btn-primary btn-large">Let's Talk About Your Revenue <i class="fa-solid fa-arrow-right"></i></a>
+          <span class="section-tag">// SHIP WITH SPEED</span>
+          <h2 class="section-heading" style="font-size: clamp(2.2rem, 5vw, 3.2rem); margin-top: 0.5rem; margin-bottom: 1.25rem;">
+            Ready to build something <span class="text-gradient">exceptional?</span>
+          </h2>
+          <p class="section-subtext" style="font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 580px; margin-left: auto; margin-right: auto;">
+            From custom high-conversion web frontends to scalable product systems and AI workflows. Let's discuss your timeline.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="#contact" class="btn-primary btn-large">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#services" class="btn-outline btn-large">Explore Capabilities</a>
+          </div>
         </div>
       </section>
     </div>

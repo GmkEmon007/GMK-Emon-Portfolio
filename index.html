@@ -513,63 +513,6 @@
         </div>
       </section>
 
-      <!-- Interactive Terminal Ask Me Console -->
-      <section class="section-padding border-t" style="background: var(--bg1); padding: 4.5rem 0;" id="home-ask-me">
-        <div class="container" style="max-width: 900px;">
-          <div class="section-header text-center" style="margin-bottom: 2.5rem;">
-            <span class="section-tag">// INTERACTIVE SHELL</span>
-            <h2 class="section-heading" style="font-size: 2.2rem;">Run a diagnostic on Emon's stack.</h2>
-            <p class="section-subtext">Click a query preset below or enter a custom prompt to ask the terminal console directly.</p>
-          </div>
-
-          <!-- Terminal Chat Console Widget -->
-          <div class="card-outline" style="position: relative; overflow: hidden; background: rgba(12, 14, 13, 0.4); border-color: rgba(34, 197, 94, 0.1); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; min-height: 480px; box-shadow: var(--shadow-card); text-align: left;">
-            <div class="corner-border tl" style="top: -1px; left: -1px;"></div>
-            <div class="corner-border tr" style="top: -1px; right: -1px;"></div>
-            <div class="corner-border bl" style="bottom: -1px; left: -1px;"></div>
-            <div class="corner-border br" style="bottom: -1px; right: -1px;"></div>
-
-            <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); font-size: 12px; color: var(--muted-foreground); border-bottom: 1px dashed var(--border); padding-bottom: 0.75rem; margin-bottom: 1rem; user-select: none;">
-              <div style="display: flex; gap: 6px;">
-                <span style="width: 8px; height: 8px; background: #3f3f46; border-radius: 50%;"></span>
-                <span style="width: 8px; height: 8px; background: #3f3f46; border-radius: 50%;"></span>
-                <span style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px var(--primary);"></span>
-              </div>
-              <span style="letter-spacing: 0.05em; color: var(--muted-foreground);">~/ask-emon.sh</span>
-              <div style="display: flex; align-items: center; gap: 6px; color: var(--primary); font-weight: bold;">
-                <span class="shimmer-dot" style="width: 6px; height: 6px; border-radius: 50%; background: var(--primary); display: inline-block; box-shadow: 0 0 8px var(--primary); animation: pulse-glow 1.5s ease-in-out infinite;"></span>
-                ready
-              </div>
-            </div>
-
-            <div id="terminal-stream-log" style="flex: 1; overflow-y: auto; min-height: 280px; max-height: 320px; padding: 0.5rem; display: flex; flex-direction: column; scrollbar-width: thin; scroll-behavior: smooth;">
-              <div style="align-self: flex-start; text-align: left; max-width: 85%; margin-bottom: 1.5rem;">
-                <div style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); margin-bottom: 4px;">› emon-bot</div>
-                <div style="color: var(--foreground); font-size: 14px; line-height: 1.6;">
-                  Connected to emon-shell terminal interface. I can answer questions about Golam Morshed Kibria Emon's technical stack, services, pricing structure, and active availability. 
-                  Select one of the quick scripts below or enter a custom prompt.
-                </div>
-              </div>
-            </div>
-
-            <div style="display: flex; flex-wrap: wrap; gap: 0.65rem; padding: 1rem 0; border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border); margin-bottom: 1rem;">
-              <button type="button" class="terminal-query-btn" data-query="what is your stack?">what is your stack?</button>
-              <button type="button" class="terminal-query-btn" data-query="are you available for hire?">are you available for hire?</button>
-              <button type="button" class="terminal-query-btn" data-query="tell me about your process">tell me about your process</button>
-              <button type="button" class="terminal-query-btn" data-query="show developer rates">show developer rates</button>
-            </div>
-
-            <form id="terminal-query-form" style="margin: 0; display: flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.12); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 10px;">
-              <span style="font-family: var(--font-mono); font-size: 14px; color: var(--primary); font-weight: bold; user-select: none;">›</span>
-              <input type="text" id="terminal-query-input" placeholder="ask anything about emon..." aria-label="Ask terminal a question" style="flex: 1; border: none; background: transparent; outline: none; font-family: var(--font-mono); font-size: 13.5px; color: var(--foreground); height: 24px;" autocomplete="off">
-              <button type="submit" aria-label="Send terminal command" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; color: var(--muted-foreground); font-family: var(--font-mono); font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all 0.2s; font-weight: bold;">
-                <span>send</span> <span style="font-size: 9px; opacity: 0.75;">↵</span>
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
       <!-- Project Channel (Chat Simulator) -->
       <section class="section-padding bg-card-dark border-t">
         <div class="container">
@@ -2935,6 +2878,66 @@ buywise-v2/
   <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
+
+  <!-- Floating Interactive Chatbox (Bottom Right) -->
+  <div id="floating-chatbox" class="floating-chatbox-container">
+    <!-- Chat Window Popup -->
+    <div id="chatbox-window" class="chatbox-window" role="dialog" aria-labelledby="chatbox-header-title" aria-hidden="true">
+      <!-- Chat Header -->
+      <div class="chatbox-header">
+        <div class="chatbox-header-info">
+          <div class="chatbox-avatar">
+            <img src="GMK_Emon_pic.png" alt="Golam Morshed Kibria Emon">
+            <span class="chatbox-status-indicator"></span>
+          </div>
+          <div>
+            <div id="chatbox-header-title" class="chatbox-title">Emon AI Assistant</div>
+            <div class="chatbox-subtitle">Online · Ask anything</div>
+          </div>
+        </div>
+        <div class="chatbox-header-actions">
+          <button type="button" id="chatbox-reset-btn" class="chatbox-action-btn" title="Reset conversation" aria-label="Reset conversation">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
+          <button type="button" id="chatbox-close-btn" class="chatbox-action-btn" title="Close chat" aria-label="Close chat">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Preset Suggestions Bar -->
+      <div class="chatbox-presets" id="chatbox-presets">
+        <button type="button" class="chatbox-preset-pill" data-query="what is your stack?">⚡ Tech Stack</button>
+        <button type="button" class="chatbox-preset-pill" data-query="are you available for hire?">💼 Availability</button>
+        <button type="button" class="chatbox-preset-pill" data-query="show developer rates">💰 Pricing</button>
+        <button type="button" class="chatbox-preset-pill" data-query="tell me about your process">🛠 Process</button>
+        <button type="button" class="chatbox-preset-pill" data-query="show your recent projects">🚀 Projects</button>
+      </div>
+
+      <!-- Chat Messages Body -->
+      <div class="chatbox-messages" id="chatbox-messages"></div>
+
+      <!-- Chat Input Footer -->
+      <form id="chatbox-input-form" class="chatbox-input-form" autocomplete="off">
+        <input type="text" id="chatbox-input" class="chatbox-input" placeholder="Ask Emon a question..." aria-label="Type your message">
+        <button type="submit" id="chatbox-send-btn" class="chatbox-send-btn" aria-label="Send message">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- Floating Chat Trigger Button -->
+    <button id="chatbox-toggle-btn" class="chatbox-trigger-btn" aria-label="Open chat assistant" aria-haspopup="dialog">
+      <div class="chatbox-trigger-icon chatbox-trigger-open">
+        <i class="fa-solid fa-comment-dots"></i>
+        <span class="chatbox-trigger-dot"></span>
+      </div>
+      <div class="chatbox-trigger-icon chatbox-trigger-close" style="display: none;">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <span class="chatbox-trigger-label">Ask Emon</span>
+    </button>
+  </div>
 
   <script src="blog-data.js"></script>
   <script src="main.js"></script>

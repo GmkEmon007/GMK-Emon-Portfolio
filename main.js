@@ -1542,113 +1542,226 @@
 
   startPingSimulator();
 
-  /* ---------- INTERACTIVE TERMINAL CONSOLE (emon.sh) ---------- */
-  function initTerminalConsole() {
-    const form = document.getElementById('terminal-query-form');
-    const input = document.getElementById('terminal-query-input');
-    const log = document.getElementById('terminal-stream-log');
-    const queryButtons = document.querySelectorAll('.terminal-query-btn');
+  /* ---------- FLOATING INTERACTIVE CHATBOX (BOTTOM RIGHT) ---------- */
+  function initFloatingChatbox() {
+    const container = document.getElementById('floating-chatbox');
+    const toggleBtn = document.getElementById('chatbox-toggle-btn');
+    const chatWindow = document.getElementById('chatbox-window');
+    const closeBtn = document.getElementById('chatbox-close-btn');
+    const resetBtn = document.getElementById('chatbox-reset-btn');
+    const form = document.getElementById('chatbox-input-form');
+    const input = document.getElementById('chatbox-input');
+    const messagesBox = document.getElementById('chatbox-messages');
+    const presetButtons = document.querySelectorAll('.chatbox-preset-pill');
+    const iconOpen = document.querySelector('.chatbox-trigger-open');
+    const iconClose = document.querySelector('.chatbox-trigger-close');
 
-    if (!form || !input || !log) return;
+    if (!container || !toggleBtn || !chatWindow || !form || !input || !messagesBox) return;
 
-    const database = {
-      'what is your stack?': 'Emon works extensively with <strong>WordPress, Elementor Pro, and WooCommerce</strong> for conversion-focused websites. On the frontend, he builds custom solutions using <strong>HTML5, CSS3, JavaScript (ES6+), React, and Tailwind CSS</strong>. For backend APIs and scripting, he utilizes <strong>PHP, MySQL, and Python (FastAPI/Flask)</strong>.',
-      'are you available for hire?': 'Emon is currently <strong>active and accepting freelance projects and select developer retainers</strong> for Q3/Q4 2026. Staging slots are limited to ensure extreme quality on every project. For direct inquiries, feel free to get in touch at <a href="mailto:business.gmkemon@gmail.com" style="color: var(--primary); text-decoration: underline;">business.gmkemon@gmail.com</a>.',
-      'tell me about your process': `Emon's 5-stage development cycle ensures high conversion rates:<br><br>
-1. <strong>Discovery</strong>: Mapping page assets, content strategies, and conversion scopes.<br>
-2. <strong>Blueprint</strong>: Designing layout mockups and assets in Figma.<br>
-3. <strong>Production</strong>: Writing clean code using WordPress or a modern custom frontend stack.<br>
-4. <strong>Optimization</strong>: Page speed hardening and security audit diagnostics.<br>
-5. <strong>Deploy</strong>: Hands-on client delivery and developer workspace portal activation.`,
-      'show developer rates': `Project pricing depends on scope and specific requirements:<br><br>
-- <strong>Custom Landing Pages</strong>: Starting at <strong>$300</strong><br>
-- <strong>WordPress Website Redesigns</strong>: Starting at <strong>$600</strong><br>
-- <strong>WooCommerce E-Commerce Builds</strong>: Starting at <strong>$1,000</strong><br>
-- <strong>PageSpeed Optimization Checks</strong>: Starting at <strong>$200</strong><br><br>
-Let's schedule a call to finalize your project scope and get a custom quote!`
-    };
+    let isOpen = false;
+    let hasGreeted = false;
 
-    function appendMessage(sender, text) {
-      const line = document.createElement('div');
-      
-      if (sender === 'user') {
-        line.style.alignSelf = 'flex-end';
-        line.style.textAlign = 'right';
-        line.style.maxWidth = '80%';
-        line.style.marginBottom = '1.5rem';
-        line.innerHTML = `
-          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--muted-foreground); margin-bottom: 4px; padding-right: 4px;">› you</div>
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 12px; padding: 10px 18px; display: inline-block; color: var(--foreground); font-size: 14px; text-align: left; line-height: 1.5;">
-            ${escapeHtml(text)}
-          </div>
-        `;
-      } else {
-        line.style.alignSelf = 'flex-start';
-        line.style.textAlign = 'left';
-        line.style.maxWidth = '85%';
-        line.style.marginBottom = '1.5rem';
-        
-        const isBotResponse = text.startsWith('Emon works') || text.startsWith('Emon is') || text.startsWith("Emon's 5-stage") || text.startsWith('Project pricing') || text.startsWith('Command not found');
-        const formattedText = isBotResponse ? text : escapeHtml(text);
-        
-        line.innerHTML = `
-          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); margin-bottom: 4px;">› emon-bot</div>
-          <div style="color: var(--foreground); font-size: 14px; line-height: 1.6;">
-            ${formattedText}
-          </div>
-        `;
+    const KNOWLEDGE_BASE = [
+      {
+        keywords: ['stack', 'tech', 'technology', 'tools', 'languages', 'framework', 'skills', 'next', 'react', 'wordpress', 'python'],
+        reply: `<strong>Technical Arsenal:</strong><br>
+• <strong>Frontend &amp; Web:</strong> Modern JavaScript (ES6+), React, Next.js, Tailwind CSS, HTML5/CSS3.<br>
+• <strong>CMS &amp; E-Commerce:</strong> Custom WordPress Themes, WooCommerce, Shopify, Webflow.<br>
+• <strong>Backend &amp; APIs:</strong> Python (FastAPI/Flask), PHP, Node.js, Supabase, PostgreSQL, MySQL.<br>
+• <strong>AI &amp; Data:</strong> LlamaIndex, LangChain, RAG Pipelines, Vector Search, TensorFlow.<br><br>
+Looking to build something specific? Let me know!`
+      },
+      {
+        keywords: ['hire', 'available', 'availability', 'schedule', 'freelance', 'work', 'status', 'open'],
+        reply: `⚡ <strong>Availability Status:</strong><br>
+Emon is <strong>currently available for projects</strong> for Q3/Q4 2026.<br><br>
+He accepts custom web experiences, fullstack products, and AI workflow integrations. Ready to get started? Visit the <a href="#contact" style="color: var(--primary); text-decoration: underline;">Contact &amp; Discovery page</a> or email <a href="mailto:business.gmkemon@gmail.com" style="color: var(--primary); text-decoration: underline;">business.gmkemon@gmail.com</a>.`
+      },
+      {
+        keywords: ['rate', 'rates', 'price', 'pricing', 'cost', 'quote', 'budget', 'charge', 'fee'],
+        reply: `💰 <strong>Transparent Pricing (Flat-Rate):</strong><br>
+• <strong>High-Converting Landing Pages:</strong> from $300<br>
+• <strong>WordPress Redesigns &amp; Custom Themes:</strong> from $600<br>
+• <strong>WooCommerce / E-Commerce Builds:</strong> from $1,000<br>
+• <strong>Fullstack Next.js Web Apps &amp; AI Systems:</strong> from $1,500<br><br>
+All projects feature fixed scopes, milestone delivery, and a 2-week warranty. You can also calculate your scope on the <a href="#contact" style="color: var(--primary); text-decoration: underline;">Contact page</a>!`
+      },
+      {
+        keywords: ['process', 'how you work', 'steps', 'workflow', 'delivery', 'timeline', 'guarantee'],
+        reply: `🛠 <strong>Emon's 5-Stage Engineering Cycle:</strong><br>
+1. <strong>Discovery:</strong> Clarify scope, conversion goals, and target audience.<br>
+2. <strong>Blueprint:</strong> Modern Figma layouts and component specs.<br>
+3. <strong>Production:</strong> Clean, semantic code (WordPress or Next.js).<br>
+4. <strong>Optimization:</strong> Core Web Vitals audit, sub-1.2s page loads, and mobile hardening.<br>
+5. <strong>Deploy &amp; Handoff:</strong> 100% code ownership + 2 weeks post-launch warranty.`
+      },
+      {
+        keywords: ['project', 'projects', 'portfolio', 'work', 'case study', 'case studies', 'recent', 'built'],
+        reply: `🚀 <strong>Featured Works in Production:</strong><br>
+• <strong>Headless E-Commerce Rebuild:</strong> WooCommerce to Next.js migration (+42% conversions, &lt;1.2s load).<br>
+• <strong>ECG Card Anomalies AI:</strong> Clinical 1D-CNN arrhythmia classifier (98.4% accuracy).<br>
+• <strong>Autonomous LeadGen Chatbot:</strong> RAG-augmented qualifier (3.2x lead capture).<br>
+• <strong>BuyWise Shopping Matrix:</strong> Real-time cross-retailer tracker (&lt;200ms sync).<br><br>
+Explore details in the <a href="#portfolio" style="color: var(--primary); text-decoration: underline;">Production Archives</a>!`
+      },
+      {
+        keywords: ['speed', 'performance', 'fast', 'load', 'lighthouse', 'pagespeed', 'core web vitals'],
+        reply: `⚡ <strong>Performance First:</strong><br>
+Every build is engineered to achieve <strong>sub-1.2 second load times</strong> and <strong>95+ Google PageSpeed</strong> scores. Fast websites directly decrease bounce rates and increase customer revenue.`
+      },
+      {
+        keywords: ['contact', 'email', 'touch', 'call', 'reach', 'meeting', 'phone'],
+        reply: `📬 <strong>Get in Touch Directly:</strong><br>
+• <strong>Email:</strong> <a href="mailto:business.gmkemon@gmail.com" style="color: var(--primary); text-decoration: underline;">business.gmkemon@gmail.com</a><br>
+• <strong>Location:</strong> Rajshahi, Bangladesh (Working globally with remote teams)<br>
+• <strong>Form:</strong> Visit the <a href="#contact" style="color: var(--primary); text-decoration: underline;">Contact Form</a> to get a reply within 24 hours!`
+      },
+      {
+        keywords: ['hello', 'hi', 'hey', 'greetings', 'who are you', 'what can you do', 'help'],
+        reply: `👋 Hello! I'm Emon's AI assistant. I can answer questions about Golam Morshed Kibria Emon's development stack, project scopes, pricing, recent case studies, and current availability.<br><br>What would you like to know?`
       }
-      log.appendChild(line);
-      log.scrollTop = log.scrollHeight;
+    ];
+
+    function openChat() {
+      isOpen = true;
+      chatWindow.classList.add('open');
+      chatWindow.setAttribute('aria-hidden', 'false');
+      if (iconOpen) iconOpen.style.display = 'none';
+      if (iconClose) iconClose.style.display = 'flex';
+      if (!hasGreeted) {
+        showGreeting();
+        hasGreeted = true;
+      }
+      setTimeout(() => input.focus(), 250);
+    }
+
+    function closeChat() {
+      isOpen = false;
+      chatWindow.classList.remove('open');
+      chatWindow.setAttribute('aria-hidden', 'true');
+      if (iconOpen) iconOpen.style.display = 'flex';
+      if (iconClose) iconClose.style.display = 'none';
+    }
+
+    function toggleChat() {
+      if (isOpen) closeChat();
+      else openChat();
+    }
+
+    toggleBtn.addEventListener('click', toggleChat);
+    closeBtn.addEventListener('click', closeChat);
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (isOpen && !container.contains(e.target)) {
+        closeChat();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        closeChat();
+      }
+    });
+
+    function formatTime() {
+      const now = new Date();
+      return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function appendMessage(sender, htmlContent) {
+      const row = document.createElement('div');
+      row.className = `chatbox-msg-row ${sender}`;
+
+      const bubble = document.createElement('div');
+      bubble.className = 'chatbox-msg-bubble';
+      bubble.innerHTML = htmlContent;
+
+      const timeSpan = document.createElement('span');
+      timeSpan.className = 'chatbox-msg-time';
+      timeSpan.textContent = formatTime();
+
+      row.appendChild(bubble);
+      row.appendChild(timeSpan);
+      messagesBox.appendChild(row);
+      messagesBox.scrollTop = messagesBox.scrollHeight;
+    }
+
+    function showGreeting() {
+      appendMessage('bot', `👋 <strong>Hi! I'm Emon's assistant.</strong><br>Ask me anything about Emon's technical stack, project scopes, pricing structure, or hiring availability.`);
+    }
+
+    function showTypingIndicator() {
+      const indicator = document.createElement('div');
+      indicator.className = 'chatbox-msg-row bot typing-row';
+      indicator.innerHTML = `
+        <div class="chatbox-typing-indicator">
+          <span></span><span></span><span></span>
+        </div>
+      `;
+      messagesBox.appendChild(indicator);
+      messagesBox.scrollTop = messagesBox.scrollHeight;
+      return indicator;
+    }
+
+    function processQuery(queryText) {
+      const clean = queryText.trim();
+      if (!clean) return;
+
+      appendMessage('user', escapeHtml(clean));
+
+      const typing = showTypingIndicator();
+      const lower = clean.toLowerCase();
+
+      setTimeout(() => {
+        if (typing && typing.parentNode) {
+          typing.remove();
+        }
+
+        let matchedReply = null;
+        for (const item of KNOWLEDGE_BASE) {
+          if (item.keywords.some(kw => lower.includes(kw))) {
+            matchedReply = item.reply;
+            break;
+          }
+        }
+
+        if (matchedReply) {
+          appendMessage('bot', matchedReply);
+        } else {
+          appendMessage('bot', `I'm happy to help! You can ask about Emon's <strong>stack</strong>, <strong>pricing &amp; rates</strong>, <strong>availability</strong>, or <strong>process</strong>.<br><br>Or email Emon directly at <a href="mailto:business.gmkemon@gmail.com" style="color: var(--primary); text-decoration: underline;">business.gmkemon@gmail.com</a>!`);
+        }
+      }, 400);
     }
 
     function escapeHtml(str) {
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
-    function runQuery(command) {
-      appendMessage('user', command);
-      
-      const loading = document.createElement('div');
-      loading.style.alignSelf = 'flex-start';
-      loading.style.marginBottom = '1.5rem';
-      loading.innerHTML = `
-        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--primary); margin-bottom: 4px;">› emon-bot</div>
-        <div style="color: var(--muted-foreground); font-family: var(--font-mono); font-size: 13px; font-style: italic;">
-          typing...
-        </div>
-      `;
-      log.appendChild(loading);
-      log.scrollTop = log.scrollHeight;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = input.value;
+      input.value = '';
+      processQuery(val);
+    });
 
-      setTimeout(() => {
-        loading.remove();
-        const response = database[command.toLowerCase()];
-        if (response) {
-          appendMessage('system', response);
-        } else {
-          appendMessage('system', `Command not found: "${command}". For direct queries, please email Emon at <a href="mailto:business.gmkemon@gmail.com" style="color: var(--primary); text-decoration: underline;">business.gmkemon@gmail.com</a> or select a preset diagnostic check above.`);
-        }
-      }, 500);
-    }
-
-    queryButtons.forEach(btn => {
+    presetButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const query = btn.getAttribute('data-query');
-        if (query) runQuery(query);
+        if (query) {
+          processQuery(query);
+        }
       });
     });
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const command = input.value.trim();
-      if (!command) return;
-      runQuery(command);
-      input.value = '';
+    resetBtn.addEventListener('click', () => {
+      messagesBox.innerHTML = '';
+      showGreeting();
     });
   }
 
-  initTerminalConsole();
+  initFloatingChatbox();
 
   // Set up routing event listener and run initial load route trigger
   window.addEventListener('hashchange', handleRoute);

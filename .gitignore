@@ -11,3 +11,7 @@ files/lovable*
 files/*_extracted*
 files/*_parsed*
 files/extracted_strings.txt
+
+# Local Agent customizations & skills
+.agents/
+.agent/

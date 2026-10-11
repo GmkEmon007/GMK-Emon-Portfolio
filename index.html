@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GMK Emon — Conversion Engineering & Growth Partner</title>
   <meta name="description" content="I don't ship pretty pages. I ship revenue systems. WordPress, frontend, and conversion design built for results.">
   <link rel="canonical" href="https://gmkemon.com">
@@ -50,11 +50,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Skip to Main Content Link (Accessibility) -->
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
 
   <!-- Tech Grid Background Lines -->
   <div class="grid-lines-bg"></div>
@@ -126,7 +129,7 @@
   </div>
 
   <!-- Main Multi-View SPA Containers -->
-  <main class="page-container">
+  <main class="page-container" id="main-content">
 
     <!-- PAGE 1: HOME -->
     <div id="page-home" class="page-view active">
@@ -237,10 +240,10 @@
             </div>
 
             <!-- Input Shell Command Line -->
-            <form id="terminal-query-form" style="margin: 0; display: flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.12); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 10px; transition: border-color 0.2s;" onfocuswithin="this.style.borderColor='var(--primary)'" onfocusout="this.style.borderColor='var(--border)'">
+            <form id="terminal-query-form" style="margin: 0; display: flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.12); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 10px;">
               <span style="font-family: var(--font-mono); font-size: 14px; color: var(--primary); font-weight: bold; user-select: none;">›</span>
-              <input type="text" id="terminal-query-input" placeholder="ask anything about emon..." style="flex: 1; border: none; background: transparent; outline: none; font-family: var(--font-mono); font-size: 13.5px; color: var(--foreground); height: 24px;" autocomplete="off">
-              <button type="submit" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; color: var(--muted-foreground); font-family: var(--font-mono); font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all 0.2s; font-weight: bold;">
+              <input type="text" id="terminal-query-input" placeholder="ask anything about emon..." aria-label="Ask terminal a question" style="flex: 1; border: none; background: transparent; outline: none; font-family: var(--font-mono); font-size: 13.5px; color: var(--foreground); height: 24px;" autocomplete="off">
+              <button type="submit" aria-label="Send terminal command" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; color: var(--muted-foreground); font-family: var(--font-mono); font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all 0.2s; font-weight: bold;">
                 <span>send</span> <span style="font-size: 9px; opacity: 0.75;">↵</span>
               </button>
             </form>
@@ -330,7 +333,7 @@
                   <a href="#service/wordpress" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
                     Inspect Capability <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                   </a>
-                  <a href="#service/wordpress" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
+                  <a href="#service/wordpress" aria-label="Inspect Web Experiences capability" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
@@ -351,10 +354,10 @@
                   </p>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
-                  <a href="#service-graphics" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
+                  <a href="#service/product-systems" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
                     Inspect Capability <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                   </a>
-                  <a href="#service-graphics" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
+                  <a href="#service/product-systems" aria-label="Inspect Product Systems capability" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
@@ -378,7 +381,7 @@
                   <a href="#service/ai-ml" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
                     Inspect Capability <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                   </a>
-                  <a href="#service/ai-ml" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
+                  <a href="#service/ai-ml" aria-label="Inspect AI Integration capability" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
@@ -1040,7 +1043,7 @@
                   <a href="#service/wordpress" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
                     Inspect Capability <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                   </a>
-                  <a href="#service/wordpress" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
+                  <a href="#service/wordpress" aria-label="Inspect Web Experiences capability" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
@@ -1061,10 +1064,10 @@
                   </p>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
-                  <a href="#service-graphics" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
+                  <a href="#service/product-systems" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
                     Inspect Capability <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                   </a>
-                  <a href="#service-graphics" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
+                  <a href="#service/product-systems" aria-label="Inspect Product Systems capability" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
@@ -1088,7 +1091,7 @@
                   <a href="#service/ai-ml" class="service-card-link" style="color: #ffffff; text-decoration: none; font-size: 0.88rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading);">
                     Inspect Capability <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                   </a>
-                  <a href="#service/ai-ml" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
+                  <a href="#service/ai-ml" aria-label="Inspect AI Integration capability" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;" class="service-arrow-btn">
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
@@ -1542,7 +1545,7 @@ export async function getStaticProps() {
     </div>
 
     <!-- PAGE 2B: SERVICE DETAIL - PRODUCT SYSTEMS -->
-    <div id="page-service-graphics" class="page-view" style="display: none;">
+    <div id="page-service-product-systems" class="page-view" style="display: none;">
       <section class="section-padding pt-32">
         <div class="container">
           <!-- Back link -->
@@ -1627,25 +1630,25 @@ export async function getStaticProps() {
           </div>
           <div class="grid-two" style="gap: 2rem; margin-bottom: 5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
             <div class="card-outline" style="padding: 2rem; position: relative;">
-              <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: rgba(5, 243, 148, 0.1); position: absolute; right: 1.5rem; top: 1rem;">01</span>
+              <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--primary-glow); position: absolute; right: 1.5rem; top: 1rem;">01</span>
               <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--foreground); margin-bottom: 0.5rem; margin-top: 0.5rem;">Architecture &amp; Schemas <span style="font-size: 0.8rem; color: var(--muted-foreground); font-weight: 400; margin-left: 6px;">(01)</span></h4>
               <p style="font-size: 0.85rem; color: var(--muted-foreground); line-height: 1.5; margin: 0;">We define database schemas, API contracts, state trees, and authentication models before writing code to prevent technical debt.</p>
               <a href="#contact" class="service-card-link" style="font-size: 0.8rem; font-weight: 700; text-decoration: none; margin-top: 1rem; display: inline-flex; align-items: center; gap: 4px;">Contact <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i></a>
             </div>
             <div class="card-outline" style="padding: 2rem; position: relative;">
-              <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: rgba(5, 243, 148, 0.1); position: absolute; right: 1.5rem; top: 1rem;">02</span>
+              <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--primary-glow); position: absolute; right: 1.5rem; top: 1rem;">02</span>
               <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--foreground); margin-bottom: 0.5rem; margin-top: 0.5rem;">Fullstack Compilation <span style="font-size: 0.8rem; color: var(--muted-foreground); font-weight: 400; margin-left: 6px;">(02)</span></h4>
               <p style="font-size: 0.85rem; color: var(--muted-foreground); line-height: 1.5; margin: 0;">Building the frontend components, connecting REST/GraphQL endpoints, and integrating databases with secure authentication.</p>
               <a href="#contact" class="service-card-link" style="font-size: 0.8rem; font-weight: 700; text-decoration: none; margin-top: 1rem; display: inline-flex; align-items: center; gap: 4px;">Contact <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i></a>
             </div>
             <div class="card-outline" style="padding: 2rem; position: relative;">
-              <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: rgba(5, 243, 148, 0.1); position: absolute; right: 1.5rem; top: 1rem;">03</span>
+              <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--primary-glow); position: absolute; right: 1.5rem; top: 1rem;">03</span>
               <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--foreground); margin-bottom: 0.5rem; margin-top: 0.5rem;">Staging &amp; Testing <span style="font-size: 0.8rem; color: var(--muted-foreground); font-weight: 400; margin-left: 6px;">(03)</span></h4>
               <p style="font-size: 0.85rem; color: var(--muted-foreground); line-height: 1.5; margin: 0;">Live demonstration in the Client Workspace Portal. Rigorous testing across latency, error boundaries, and security audits.</p>
               <a href="#contact" class="service-card-link" style="font-size: 0.8rem; font-weight: 700; text-decoration: none; margin-top: 1rem; display: inline-flex; align-items: center; gap: 4px;">Contact <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i></a>
             </div>
             <div class="card-outline" style="padding: 2rem; position: relative;">
-              <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: rgba(5, 243, 148, 0.1); position: absolute; right: 1.5rem; top: 1rem;">04</span>
+              <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--primary-glow); position: absolute; right: 1.5rem; top: 1rem;">04</span>
               <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--foreground); margin-bottom: 0.5rem; margin-top: 0.5rem;">Production Shipping <span style="font-size: 0.8rem; color: var(--muted-foreground); font-weight: 400; margin-left: 6px;">(04)</span></h4>
               <p style="font-size: 0.85rem; color: var(--muted-foreground); line-height: 1.5; margin: 0;">Complete codebase handoff, deployment on production edge networks, domain pointing, and 30 days of monitoring.</p>
               <a href="#contact" class="service-card-link" style="font-size: 0.8rem; font-weight: 700; text-decoration: none; margin-top: 1rem; display: inline-flex; align-items: center; gap: 4px;">Contact <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i></a>
@@ -1957,7 +1960,7 @@ export async function getStaticProps() {
             <button onclick="document.getElementById('portfolio-wordpress').scrollIntoView({ behavior: 'smooth', block: 'start' })" class="btn-outline category-nav-btn" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; padding: 0.6rem 1.25rem; border-radius: 50px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
               <span style="color: var(--primary);">➔</span> Web Experiences
             </button>
-            <button onclick="document.getElementById('portfolio-graphics').scrollIntoView({ behavior: 'smooth', block: 'start' })" class="btn-outline category-nav-btn" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; padding: 0.6rem 1.25rem; border-radius: 50px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+            <button onclick="document.getElementById('portfolio-product-systems').scrollIntoView({ behavior: 'smooth', block: 'start' })" class="btn-outline category-nav-btn" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; padding: 0.6rem 1.25rem; border-radius: 50px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
               <span style="color: var(--primary);">➔</span> Product Systems
             </button>
             <button onclick="document.getElementById('portfolio-ai-ml').scrollIntoView({ behavior: 'smooth', block: 'start' })" class="btn-outline category-nav-btn" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; padding: 0.6rem 1.25rem; border-radius: 50px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
@@ -2021,7 +2024,7 @@ export async function getStaticProps() {
           </div>
 
           <!-- Category Section 2: Product Systems -->
-          <div class="portfolio-category-section" id="portfolio-graphics" style="margin-bottom: 5rem; scroll-margin-top: 100px;">
+          <div class="portfolio-category-section" id="portfolio-product-systems" style="margin-bottom: 5rem; scroll-margin-top: 100px;">
             <div class="category-header" style="margin-bottom: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 1rem;">
               <h3 style="font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--foreground); display: flex; align-items: center; gap: 8px;">
                 <span style="color: var(--primary);">➔</span> Product Systems &amp; Applications
@@ -3159,7 +3162,7 @@ buywise-v2/
           <h2 class="section-heading mt-2">Subscribe to my newsletter</h2>
           <p class="section-subtext mt-4">Zero spam. Only deep analytical writeups on web technology, development, and engineering lessons, sent once a month.</p>
           <div style="margin-top: 2.5rem; display: flex; gap: 10px; max-width: 500px; margin-left: auto; margin-right: auto; flex-wrap: wrap; justify-content: center;">
-            <input type="email" placeholder="Enter your email" style="flex: 1; min-width: 250px; background: var(--bg2); border: 1px solid var(--border); padding: 0.8rem 1.2rem; border-radius: 8px; color: var(--foreground); font-family: var(--font-body); font-size: 0.9rem;" required>
+            <input type="email" id="newsletter-email" name="email" aria-label="Your email address" placeholder="Enter your email" style="flex: 1; min-width: 250px; background: var(--bg2); border: 1px solid var(--border); padding: 0.8rem 1.2rem; border-radius: 8px; color: var(--foreground); font-family: var(--font-body); font-size: 0.9rem;" required>
             <button class="btn-primary" style="height: auto;">Subscribe</button>
           </div>
         </div>
@@ -3230,10 +3233,10 @@ buywise-v2/
           </div>
           
           <div class="footer-socials-circle" style="display: flex; gap: 0.75rem;">
-            <a href="https://github.com/GmkEmon007" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: #121212; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform 0.2s, background 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/gmkemon/" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: #0077b5; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform 0.2s, background 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.facebook.com/gmk.emon" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: #1877f2; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform 0.2s, background 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="mailto:business.gmkemon@gmail.com" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: #ea4335; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform 0.2s, background 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://github.com/GmkEmon007" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: #121212; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform 0.2s, background 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/gmkemon/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: #0077b5; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform 0.2s, background 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/gmk.emon" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: #1877f2; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform 0.2s, background 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="mailto:business.gmkemon@gmail.com" aria-label="Email GMK Emon" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: #ea4335; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform 0.2s, background 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
         

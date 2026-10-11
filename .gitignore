@@ -1,0 +1,13 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependencies
+node_modules/
+
+# Temporary extraction files
+files/lovable*
+files/*_extracted*
+files/*_parsed*
+files/extracted_strings.txt

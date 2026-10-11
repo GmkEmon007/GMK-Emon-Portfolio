@@ -15,6 +15,7 @@
   
   --font-heading: 'Space Grotesk', sans-serif;
   --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
   
   --gradient-primary: linear-gradient(135deg, #05f394, #10b981);
   --shadow-glow: 0 0 35px rgba(5, 243, 148, 0.08);
@@ -29,10 +30,15 @@
   --bg3: #e4e4e7;
   --border: #e4e4e7;
   
+  --primary: #16a34a;
+  --primary-rgb: 22, 163, 74;
+  --primary-glow: rgba(22, 163, 74, 0.15);
+  --gradient-primary: linear-gradient(135deg, #16a34a, #15803d);
+  
   --foreground: #09090b;
   --muted-foreground: #71717a;
   
-  --shadow-glow: 0 0 35px rgba(34, 197, 94, 0.04);
+  --shadow-glow: 0 0 35px rgba(22, 163, 74, 0.04);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -141,6 +147,34 @@ button {
   border: none;
   font-family: inherit;
   cursor: none;
+}
+
+/* ── ACCESSIBILITY (KEYBOARD FOCUS & SKIP LINK) ── */
+:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 3px !important;
+}
+
+.skip-to-content {
+  position: fixed;
+  top: -100px;
+  left: 1.5rem;
+  background: var(--primary);
+  color: #000000;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  z-index: 9999999;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skip-to-content:focus,
+.skip-to-content:focus-visible {
+  top: 1.5rem;
 }
 
 /* ── LAYOUT UTILITIES ── */
@@ -2357,7 +2391,7 @@ button {
   }
 }
 
-@media (hover: none) {
+@media (hover: none), (pointer: coarse) {
   #cursor, #cursor-trail, #mouse-glow {
     display: none !important;
   }
@@ -2589,8 +2623,6 @@ button {
   .status-divider {
     display: none;
   }
-}
-
 }
 
 /* ── ACCESSIBILITY (REDUCED MOTION OVERRIDES) ── */
@@ -3666,4 +3698,18 @@ button {
   border-color: var(--primary);
   color: var(--primary);
   background: rgba(34, 197, 94, 0.05);
+}
+
+.terminal-query-btn:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+
+#terminal-query-form {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#terminal-query-form:focus-within {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.15);
 }

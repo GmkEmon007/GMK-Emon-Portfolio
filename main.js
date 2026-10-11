@@ -30,70 +30,89 @@
     }
   }
 
-  /* ---------- CUSTOM CURSOR + MOUSE GLOW ---------- */
+  /* ---------- CUSTOM CURSOR + MOUSE GLOW (OPTIMIZED & TOUCH-SAFE) ---------- */
   const cursor = document.getElementById('cursor');
   const cursorTrail = document.getElementById('cursor-trail');
   const mouseGlow = document.getElementById('mouse-glow');
 
-  let mouseX = 0, mouseY = 0;
-  let trailX = 0, trailY = 0;
+  const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+  if (!isTouchDevice && !motionReduced && (cursor || cursorTrail || mouseGlow)) {
+    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+    let trailX = mouseX, trailY = mouseY;
+    let isTicking = false;
 
-    if (cursor) {
-      cursor.style.left = mouseX + 'px';
-      cursor.style.top = mouseY + 'px';
-    }
-    if (mouseGlow) {
-      mouseGlow.style.left = mouseX + 'px';
-      mouseGlow.style.top = mouseY + 'px';
-    }
-  });
+    function renderTrail() {
+      const diffX = mouseX - trailX;
+      const diffY = mouseY - trailY;
+      trailX += diffX * 0.15;
+      trailY += diffY * 0.15;
 
-  function animateTrail() {
-    trailX += (mouseX - trailX) * 0.12;
-    trailY += (mouseY - trailY) * 0.12;
-    if (cursorTrail) {
-      cursorTrail.style.left = trailX + 'px';
-      cursorTrail.style.top = trailY + 'px';
+      if (cursorTrail) {
+        cursorTrail.style.left = trailX + 'px';
+        cursorTrail.style.top = trailY + 'px';
+      }
+
+      // If trail has caught up to the mouse, pause loop to save CPU
+      if (Math.abs(diffX) > 0.1 || Math.abs(diffY) > 0.1) {
+        requestAnimationFrame(renderTrail);
+      } else {
+        isTicking = false;
+      }
     }
-    requestAnimationFrame(animateTrail);
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (cursor) {
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+      }
+      if (mouseGlow) {
+        mouseGlow.style.left = mouseX + 'px';
+        mouseGlow.style.top = mouseY + 'px';
+      }
+
+      if (!isTicking) {
+        isTicking = true;
+        requestAnimationFrame(renderTrail);
+      }
+    }, { passive: true });
+
+    // Hover expansion triggers
+    const hoverTargets = 'a, button, .card-outline, .chat-tab-btn, .faq-accordion-btn, .budget-btn, input, select, textarea';
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest(hoverTargets)) {
+        if (cursor) {
+          cursor.style.width = '24px';
+          cursor.style.height = '24px';
+          cursor.style.backgroundColor = 'rgba(34, 197, 94, 0.2)';
+        }
+        if (cursorTrail) {
+          cursorTrail.style.width = '46px';
+          cursorTrail.style.height = '46px';
+          cursorTrail.style.borderColor = 'var(--primary)';
+        }
+      }
+    });
+
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest(hoverTargets)) {
+        if (cursor) {
+          cursor.style.width = '12px';
+          cursor.style.height = '12px';
+          cursor.style.backgroundColor = 'var(--primary)';
+        }
+        if (cursorTrail) {
+          cursorTrail.style.width = '32px';
+          cursorTrail.style.height = '32px';
+          cursorTrail.style.borderColor = 'rgba(34, 197, 94, 0.3)';
+        }
+      }
+    });
   }
-  animateTrail();
-
-  // Hover expansion triggers
-  const hoverTargets = 'a, button, .card-outline, .chat-tab-btn, .faq-accordion-btn, .budget-btn';
-  document.addEventListener('mouseover', e => {
-    if (e.target.closest(hoverTargets)) {
-      if (cursor) {
-        cursor.style.width = '24px';
-        cursor.style.height = '24px';
-        cursor.style.backgroundColor = 'rgba(34, 197, 94, 0.2)';
-      }
-      if (cursorTrail) {
-        cursorTrail.style.width = '48px';
-        cursorTrail.style.height = '48px';
-        cursorTrail.style.borderColor = 'var(--primary)';
-      }
-    }
-  });
-
-  document.addEventListener('mouseout', e => {
-    if (e.target.closest(hoverTargets)) {
-      if (cursor) {
-        cursor.style.width = '12px';
-        cursor.style.height = '12px';
-        cursor.style.backgroundColor = 'var(--primary)';
-      }
-      if (cursorTrail) {
-        cursorTrail.style.width = '32px';
-        cursorTrail.style.height = '32px';
-        cursorTrail.style.borderColor = 'rgba(34, 197, 94, 0.3)';
-      }
-    }
-  });
 
   /* ---------- HASH SPA ROUTER ---------- */
   const navLinks = document.querySelectorAll('.nav-link');
